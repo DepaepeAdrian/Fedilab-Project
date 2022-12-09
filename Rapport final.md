@@ -12,7 +12,7 @@ Ce rapport contient les grandes étapes de nos recherches :
 Dans ce rapport vous trouverez des références qui vous redirigerons vers notre github. La-bas vous y trouverez nos annexes, schémas et explications.
 
 
-## Step 1
+## Step 1 : Schémas, rétro ingénerie et fichier PML
 
 ### 1.1 Creation du schema physique
 
@@ -26,7 +26,7 @@ fff
 
 ### 1.4 Creation du fichier PML
 
-## Step 2
+## Step 2 : Analyse des requêtes
 
 ### Récupération des données
 Dans le but d'analyser les requêtes du code Fedilab, nous avons installé SQLinspect.
@@ -37,4 +37,23 @@ Ceux-ci aident à mieux visualiser la structure des différentes requêtes.
 
 Afin d'avoir une meilleur compréhension des explications, vous trouverez [ici les différents graphes](https://github.com/DepaepeAdrian/Fedilab-Project/blob/main/Annexes/Step%202/Query_Statistics_Schema%20.pdf) qui donnent une visualisation de la situation.
 
+
+## Step 3 : What if ? 10 scénarios possibles.
+
+### Scenario 1 
+
+#### Supprimer la table USER_TEMP
+explications
+
+### Scenario 2
+ 
+#### ajouter xx
+
+##  Step 4 : Critiques sur la DB et le projet 
+
+### Points positifs
+
+### Points negatifs
+
+### Conclusion
 
