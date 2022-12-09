@@ -36,7 +36,7 @@ Ceux-ci aident à mieux visualiser la structure des différentes requêtes.
 ### Analyse des données
 
 Afin d'avoir une meilleur compréhension des explications, vous trouverez [ici les différents graphes](https://github.com/DepaepeAdrian/Fedilab-Project/blob/main/Annexes/Step%202/Query_Statistics_Schema%20.pdf) qui donnent une visualisation de la situation.
-Sur le graphe de la première page, il est rapidement lisible chaque type de requêtes n'est représenté de façon équivalente.
+Sur le graphe de la première page, il est rapidement lisible que chaque type de requêtes n'est pas représenté de façon équivalente.
 Il existe un gros podium composé des requêtes CREATE(37%), SELECT(29%) et ALTER (22%) qui a eux trois représentent 88% des requêtes.
 Les douze pourcent restant se compose de trois autres types de requêtes DROP (5,7%) DELETE (4,7%) et INSERT (1%) qui sont ici sous représentés.
 
