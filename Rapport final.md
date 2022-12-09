@@ -14,13 +14,17 @@ Dans ce rapport vous trouverez des références qui vous redirigerons vers notre
 
 ## Step 1
 
-### Creation du schema physique
+### 1.1 Creation du schema physique
 
-### Recherches sur les foreign keys implicites
+bla bla
 
-### Creation du schema logique enrichi
+### 1.2 Recherches sur les foreign keys implicites
 
-### Creation du fichier PML
+fff
+
+### 1.3 Creation du schema logique enrichi
+
+### 1.4 Creation du fichier PML
 
 ## Step 2
 
