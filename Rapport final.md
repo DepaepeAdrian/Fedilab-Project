@@ -28,7 +28,13 @@ fff
 
 ## Step 2
 
-### Récupération des données avec SQLinspect
+### Récupération des données
 Dans le but d'analyser les requêtes du code Fedilab, nous avons installé SQLinspect.
-Grâce à cela, nous avons récupérer  105 requêtes.
+Grâce à cela, nous avons récupérer  105 requêtes. Nous avons traité  et réorganisé ces données dans plusieurs Excel. Ensuite, nous avons utilisé ces Excel depuis PowerBi pour créer des graphes représentatifs.
+Ceux-ci aident à mieux visualiser la structure des différentes requêtes.
+
+### Analyse des données
+
+Afin d'avoir une meilleur compréhension des explications, vous trouverez [ici les différents graphes](https://github.com/DepaepeAdrian/Fedilab-Project/blob/main/Annexes/Step%202/Query_Statistics_Schema%20.pdf) qui donnent une visualisation de la situation.
+
 
