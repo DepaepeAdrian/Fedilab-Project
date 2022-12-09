@@ -15,17 +15,18 @@ Dans ce rapport vous trouverez des références qui vous redirigerons vers notre
 ## Step 1 : Schémas, rétro ingénerie et fichier PML
 
 ### 1.1 Creation du schema physique
+Rodrigue ou Mamadou
 
-bla bla
 
 ### 1.2 Recherches sur les foreign keys implicites
+Ceux qui ont trouvé des clés. Explications 
 
-fff
 
 ### 1.3 Creation du schema logique enrichi
+Rodrigue
 
 ### 1.4 Creation du fichier PML
-
+ apres SL enrichi, Adrian fait le PML 
 ## Step 2 : Analyse des requêtes
 
 ### Récupération des données
@@ -45,16 +46,68 @@ Mais il est possible d'en sortir quelques statistiques intéressantes.
 La grande majorité des requêtes (91,5%) ne dépasse pas les 38 mots. Toujours en majorité, 62% des requêtes ne dépassent 17 mots.
 Ce qui pourrait tendre à croire que la majorité des requêtes sont assez simple, du fait que celles-ci soient assez courte.
 
+Adrian fin
+
 ## Step 3 : What if ? 10 scénarios possibles.
 
 ### Scenario 1 
 
 #### Supprimer la table USER_TEMP
-explications
+
+Rodrigue
+
 
 ### Scenario 2
  
+#### Supprimer une colonne liée a une autre colonne
+
+Rodrigue
+
+### Scenario 3
+ 
 #### ajouter xx
+
+Rodrigue 
+
+### Scenario 4
+ 
+#### ajouter xx
+Mamadou  statuses_cache
+
+### Scenario 5
+ 
+#### ajouter xx
+Mamadou  statuses_cache
+
+### Scenario 6
+ 
+#### ajouter xx
+Mamadou  statuses_cache
+
+### Scenario 7
+ 
+#### ajouter xx
+Adrian Emoji table
+
+### Scenario 8
+ 
+#### ajouter xx
+Adrian je cherche
+
+### Scenario 9
+ 
+#### ajouter xx
+kouakou au choix sur autre table que statuses_cache &  Emoji  & USER_TEMP
+
+### Scenario 10
+ 
+#### ajouter xx
+kouakou au choix sur autre table que statuses_cache &  Emoji  & USER_TEMP
+
+
+
+
+
 
 ##  Step 4 : Critiques sur la DB et le projet 
 
