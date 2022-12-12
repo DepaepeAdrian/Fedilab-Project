@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<Smells>
+  <Smell>
+    <Kind>FEAR_OF_THE_UNKNOWN</Kind>
+    <File>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java</File>
+    <Line>614</Line>
+    <Certainty>LOW_CERTAINTY</Certainty>
+    <Message>'STATUSES_CACHE.USER_ID' is nullable and used in an expression without NULL check.</Message>
+  </Smell>
+  <Smell>
+    <Kind>FEAR_OF_THE_UNKNOWN</Kind>
+    <File>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java</File>
+    <Line>622</Line>
+    <Certainty>LOW_CERTAINTY</Certainty>
+    <Message>'STATUSES_CACHE.REBLOG' is nullable and used in an expression without NULL check.</Message>
+  </Smell>
+  <Smell>
+    <Kind>FEAR_OF_THE_UNKNOWN</Kind>
+    <File>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java</File>
+    <Line>622</Line>
+    <Certainty>LOW_CERTAINTY</Certainty>
+    <Message>'STATUSES_CACHE.USER_ID' is nullable and used in an expression without NULL check.</Message>
+  </Smell>
+  <Smell>
+    <Kind>FEAR_OF_THE_UNKNOWN</Kind>
+    <File>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java</File>
+    <Line>671</Line>
+    <Certainty>LOW_CERTAINTY</Certainty>
+    <Message>'STATUSES_CACHE.USER_ID' is nullable and used in an expression without NULL check.</Message>
+  </Smell>
+  <Smell>
+    <Kind>FEAR_OF_THE_UNKNOWN</Kind>
+    <File>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java</File>
+    <Line>680</Line>
+    <Certainty>LOW_CERTAINTY</Certainty>
+    <Message>'STATUSES_CACHE.USER_ID' is nullable and used in an expression without NULL check.</Message>
+  </Smell>
+  <Smell>
+    <Kind>FEAR_OF_THE_UNKNOWN</Kind>
+    <File>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java</File>
+    <Line>689</Line>
+    <Certainty>LOW_CERTAINTY</Certainty>
+    <Message>'STATUSES_CACHE.USER_ID' is nullable and used in an expression without NULL check.</Message>
+  </Smell>
+  <Smell>
+    <Kind>FEAR_OF_THE_UNKNOWN</Kind>
+    <File>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java</File>
+    <Line>699</Line>
+    <Certainty>LOW_CERTAINTY</Certainty>
+    <Message>'STATUSES_CACHE.USER_ID' is nullable and used in an expression without NULL check.</Message>
+  </Smell>
+</Smells>

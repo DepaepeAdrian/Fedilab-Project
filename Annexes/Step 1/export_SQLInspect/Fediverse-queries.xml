@@ -1,0 +1,1263 @@
+<?xml version="1.0" ?>
+<Queries>
+  <Query id="1">
+    <Value>DELETE FROM NOTIFICATION_CACHE WHERE ID NOT IN (SELECT MIN(ID) FROM NOTIFICATION_CACHE GROUP BY NOTIFICATION_ID,INSTANCE)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>NotificationCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java</ExecFile>
+    <ExecLine>217</ExecLine>
+    <ExecString>db.execSQL("DELETE FROM " + Sqlite.TABLE_NOTIFICATION_CACHE + " WHERE "+ Sqlite.COL_ID+ " NOT IN (SELECT MIN("+ Sqlite.COL_ID+ ") FROM "+ Sqlite.TABLE_NOTIFICATION_CACHE+ " GROUP BY "+ Sqlite.COL_NOTIFICATION_ID+ ","+ Sqlite.COL_INSTANCE+ ")")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.NotificationCacheDAO.removeDuplicate()" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java" methodLine="216" callLine="217"></Call>
+    </CallStack>
+  </Query>
+  <Query id="2">
+    <Value>select count(*) from NOTIFICATION_CACHE where USER_ID = '{{na}}' AND INSTANCE = '{{na}}'</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>NotificationCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java</ExecFile>
+    <ExecLine>424</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_NOTIFICATION_CACHE + " where "+ Sqlite.COL_USER_ID+ " = '"+ userId+ "' AND "+ Sqlite.COL_INSTANCE+ " = '"+ instance+ "'",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.NotificationCacheDAO.getStat()" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java" methodLine="415" callLine="424"></Call>
+    </CallStack>
+  </Query>
+  <Query id="3">
+    <Value>select count(*) from NOTIFICATION_CACHE where USER_ID = '{{na}}' AND INSTANCE = '{{na}}' AND TYPE = 'reblog'</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>NotificationCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java</ExecFile>
+    <ExecLine>432</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_NOTIFICATION_CACHE + " where "+ Sqlite.COL_USER_ID+ " = '"+ userId+ "' AND "+ Sqlite.COL_INSTANCE+ " = '"+ instance+ "' AND "+ Sqlite.COL_TYPE+ " = 'reblog'",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.NotificationCacheDAO.getStat()" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java" methodLine="415" callLine="432"></Call>
+    </CallStack>
+  </Query>
+  <Query id="4">
+    <Value>select count(*) from NOTIFICATION_CACHE where USER_ID = '{{na}}' AND INSTANCE = '{{na}}' AND TYPE = 'favourite'</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>NotificationCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java</ExecFile>
+    <ExecLine>441</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_NOTIFICATION_CACHE + " where "+ Sqlite.COL_USER_ID+ " = '"+ userId+ "' AND "+ Sqlite.COL_INSTANCE+ " = '"+ instance+ "' AND "+ Sqlite.COL_TYPE+ " = 'favourite'",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.NotificationCacheDAO.getStat()" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java" methodLine="415" callLine="441"></Call>
+    </CallStack>
+  </Query>
+  <Query id="5">
+    <Value>select count(*) from NOTIFICATION_CACHE where USER_ID = '{{na}}' AND INSTANCE = '{{na}}' AND TYPE = 'mention'</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>NotificationCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java</ExecFile>
+    <ExecLine>451</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_NOTIFICATION_CACHE + " where "+ Sqlite.COL_USER_ID+ " = '"+ userId+ "' AND "+ Sqlite.COL_INSTANCE+ " = '"+ instance+ "' AND "+ Sqlite.COL_TYPE+ " = 'mention'",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.NotificationCacheDAO.getStat()" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java" methodLine="415" callLine="451"></Call>
+    </CallStack>
+  </Query>
+  <Query id="6">
+    <Value>select count(*) from NOTIFICATION_CACHE where USER_ID = '{{na}}' AND INSTANCE = '{{na}}' AND TYPE = 'follow'</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>NotificationCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java</ExecFile>
+    <ExecLine>461</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_NOTIFICATION_CACHE + " where "+ Sqlite.COL_USER_ID+ " = '"+ userId+ "' AND "+ Sqlite.COL_INSTANCE+ " = '"+ instance+ "' AND "+ Sqlite.COL_TYPE+ " = 'follow'",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.NotificationCacheDAO.getStat()" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java" methodLine="415" callLine="461"></Call>
+    </CallStack>
+  </Query>
+  <Query id="7">
+    <Value>select count(*) from NOTIFICATION_CACHE where USER_ID = '{{na}}' AND INSTANCE = '{{na}}' AND TYPE = 'poll'</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>NotificationCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java</ExecFile>
+    <ExecLine>471</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_NOTIFICATION_CACHE + " where "+ Sqlite.COL_USER_ID+ " = '"+ userId+ "' AND "+ Sqlite.COL_INSTANCE+ " = '"+ instance+ "' AND "+ Sqlite.COL_TYPE+ " = 'poll'",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.NotificationCacheDAO.getStat()" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java" methodLine="415" callLine="471"></Call>
+    </CallStack>
+  </Query>
+  <Query id="8">
+    <Value>select count(*) from NOTIFICATION_CACHE where {{na}} AND TYPE = 'reblog'</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>NotificationCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java</ExecFile>
+    <ExecLine>625</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_NOTIFICATION_CACHE + " where "+ selection.toString()+ " AND "+ Sqlite.COL_TYPE+ " = 'reblog'",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.NotificationCacheDAO.getChartsEvolution(java.lang.String,java.util.Date,java.util.Date)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java" methodLine="577" callLine="625"></Call>
+    </CallStack>
+  </Query>
+  <Query id="9">
+    <Value>select count(*) from NOTIFICATION_CACHE where {{na}} AND TYPE = 'favourite'</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>NotificationCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java</ExecFile>
+    <ExecLine>634</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_NOTIFICATION_CACHE + " where "+ selection.toString()+ " AND "+ Sqlite.COL_TYPE+ " = 'favourite'",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.NotificationCacheDAO.getChartsEvolution(java.lang.String,java.util.Date,java.util.Date)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java" methodLine="577" callLine="634"></Call>
+    </CallStack>
+  </Query>
+  <Query id="10">
+    <Value>select count(*) from NOTIFICATION_CACHE where {{na}} AND TYPE = 'mention'</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>NotificationCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java</ExecFile>
+    <ExecLine>645</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_NOTIFICATION_CACHE + " where "+ selection.toString()+ " AND "+ Sqlite.COL_TYPE+ " = 'mention'",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.NotificationCacheDAO.getChartsEvolution(java.lang.String,java.util.Date,java.util.Date)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java" methodLine="577" callLine="645"></Call>
+    </CallStack>
+  </Query>
+  <Query id="11">
+    <Value>select count(*) from NOTIFICATION_CACHE where {{na}} AND TYPE = 'follow'</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>NotificationCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java</ExecFile>
+    <ExecLine>656</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_NOTIFICATION_CACHE + " where "+ selection.toString()+ " AND "+ Sqlite.COL_TYPE+ " = 'follow'",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.NotificationCacheDAO.getChartsEvolution(java.lang.String,java.util.Date,java.util.Date)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java" methodLine="577" callLine="656"></Call>
+    </CallStack>
+  </Query>
+  <Query id="12">
+    <Value>select count(*) from NOTIFICATION_CACHE where {{na}} AND TYPE = 'reblog'</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>NotificationCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java</ExecFile>
+    <ExecLine>700</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_NOTIFICATION_CACHE + " where "+ selection.toString()+ " AND "+ Sqlite.COL_TYPE+ " = 'reblog'",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.NotificationCacheDAO.getChartsEvolution(java.lang.String,java.util.Date,java.util.Date)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java" methodLine="577" callLine="700"></Call>
+    </CallStack>
+  </Query>
+  <Query id="13">
+    <Value>select count(*) from NOTIFICATION_CACHE where {{na}} AND TYPE = 'favourite'</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>NotificationCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java</ExecFile>
+    <ExecLine>710</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_NOTIFICATION_CACHE + " where "+ selection.toString()+ " AND "+ Sqlite.COL_TYPE+ " = 'favourite'",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.NotificationCacheDAO.getChartsEvolution(java.lang.String,java.util.Date,java.util.Date)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java" methodLine="577" callLine="710"></Call>
+    </CallStack>
+  </Query>
+  <Query id="14">
+    <Value>select count(*) from NOTIFICATION_CACHE where {{na}} AND TYPE = 'mention'</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>NotificationCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java</ExecFile>
+    <ExecLine>719</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_NOTIFICATION_CACHE + " where "+ selection.toString()+ " AND "+ Sqlite.COL_TYPE+ " = 'mention'",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.NotificationCacheDAO.getChartsEvolution(java.lang.String,java.util.Date,java.util.Date)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java" methodLine="577" callLine="719"></Call>
+    </CallStack>
+  </Query>
+  <Query id="15">
+    <Value>select count(*) from NOTIFICATION_CACHE where {{na}} AND TYPE = 'follow'</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>NotificationCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java</ExecFile>
+    <ExecLine>729</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_NOTIFICATION_CACHE + " where "+ selection.toString()+ " AND "+ Sqlite.COL_TYPE+ " = 'follow'",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.NotificationCacheDAO.getChartsEvolution(java.lang.String,java.util.Date,java.util.Date)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java" methodLine="577" callLine="729"></Call>
+    </CallStack>
+  </Query>
+  <Query id="16">
+    <Value>select count(*) from NOTIFICATION_CACHE where {{na}} AND TYPE = 'reblog'</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>NotificationCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java</ExecFile>
+    <ExecLine>772</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_NOTIFICATION_CACHE + " where "+ selection.toString()+ " AND "+ Sqlite.COL_TYPE+ " = 'reblog'",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.NotificationCacheDAO.getChartsEvolution(java.lang.String,java.util.Date,java.util.Date)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java" methodLine="577" callLine="772"></Call>
+    </CallStack>
+  </Query>
+  <Query id="17">
+    <Value>select count(*) from NOTIFICATION_CACHE where {{na}} AND TYPE = 'favourite'</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>NotificationCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java</ExecFile>
+    <ExecLine>782</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_NOTIFICATION_CACHE + " where "+ selection.toString()+ " AND "+ Sqlite.COL_TYPE+ " = 'favourite'",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.NotificationCacheDAO.getChartsEvolution(java.lang.String,java.util.Date,java.util.Date)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java" methodLine="577" callLine="782"></Call>
+    </CallStack>
+  </Query>
+  <Query id="18">
+    <Value>select count(*) from NOTIFICATION_CACHE where {{na}} AND TYPE = 'mention'</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>NotificationCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java</ExecFile>
+    <ExecLine>791</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_NOTIFICATION_CACHE + " where "+ selection.toString()+ " AND "+ Sqlite.COL_TYPE+ " = 'mention'",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.NotificationCacheDAO.getChartsEvolution(java.lang.String,java.util.Date,java.util.Date)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java" methodLine="577" callLine="791"></Call>
+    </CallStack>
+  </Query>
+  <Query id="19">
+    <Value>select count(*) from NOTIFICATION_CACHE where {{na}} AND TYPE = 'follow'</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>NotificationCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java</ExecFile>
+    <ExecLine>804</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_NOTIFICATION_CACHE + " where "+ selectionFollow.toString()+ " AND "+ Sqlite.COL_TYPE+ " = 'follow'",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.NotificationCacheDAO.getChartsEvolution(java.lang.String,java.util.Date,java.util.Date)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/NotificationCacheDAO.java" methodLine="577" callLine="804"></Call>
+    </CallStack>
+  </Query>
+  <Query id="20">
+    <Value>SELECT Count(*) FROM TRACKING_BLOCK</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>DomainBlockDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/DomainBlockDAO.java</ExecFile>
+    <ExecLine>71</ExecLine>
+    <ExecString>db.rawQuery("SELECT Count(*) FROM " + Sqlite.TABLE_TRACKING_BLOCK,null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.DomainBlockDAO.getTotalCount()" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/DomainBlockDAO.java" methodLine="70" callLine="71"></Call>
+    </CallStack>
+  </Query>
+  <Query id="21">
+    <Value>select count(*) from USER_ACCOUNT where USERNAME = '{{na}}' AND INSTANCE = '{{na}}'</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>AccountDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/AccountDAO.java</ExecFile>
+    <ExecLine>354</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_USER_ACCOUNT + " where "+ Sqlite.COL_USERNAME+ " = '"+ account.getUsername()+ "' AND "+ Sqlite.COL_INSTANCE+ " = '"+ account.getInstance()+ "'",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.AccountDAO.userExist(app.fedilab.android.client.Entities.Account)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/AccountDAO.java" methodLine="347" callLine="354"></Call>
+    </CallStack>
+  </Query>
+  <Query id="22">
+    <Value>DELETE FROM STATUSES_CACHE WHERE ID NOT IN (SELECT MIN(ID) FROM STATUSES_CACHE GROUP BY STATUS_ID,INSTANCE)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>StatusCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java</ExecFile>
+    <ExecLine>209</ExecLine>
+    <ExecString>db.execSQL("DELETE FROM " + Sqlite.TABLE_STATUSES_CACHE + " WHERE "+ Sqlite.COL_ID+ " NOT IN (SELECT MIN("+ Sqlite.COL_ID+ ") FROM "+ Sqlite.TABLE_STATUSES_CACHE+ " GROUP BY "+ Sqlite.COL_STATUS_ID+ ","+ Sqlite.COL_INSTANCE+ ")")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.StatusCacheDAO.removeDuplicate()" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java" methodLine="208" callLine="209"></Call>
+    </CallStack>
+  </Query>
+  <Query id="23">
+    <Value>select count(*) from STATUSES_CACHE where CACHED_ACTION = '1' AND USER_ID = '{{na}}' AND INSTANCE = '{{na}}'</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>StatusCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java</ExecFile>
+    <ExecLine>614</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_STATUSES_CACHE + " where "+ Sqlite.COL_CACHED_ACTION+ " = '"+ ARCHIVE_CACHE+ "' AND "+ Sqlite.COL_USER_ID+ " = '"+ userId+ "' AND "+ Sqlite.COL_INSTANCE+ " = '"+ instance+ "'",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.StatusCacheDAO.getStat()" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java" methodLine="605" callLine="614"></Call>
+    </CallStack>
+  </Query>
+  <Query id="24">
+    <Value>select count(*) from STATUSES_CACHE where CACHED_ACTION = '1' AND USER_ID = '{{na}}' AND INSTANCE = '{{na}}' AND REBLOG IS NOT NULL AND REBLOG != ''</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>StatusCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java</ExecFile>
+    <ExecLine>622</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_STATUSES_CACHE + " where "+ Sqlite.COL_CACHED_ACTION+ " = '"+ ARCHIVE_CACHE+ "' AND "+ Sqlite.COL_USER_ID+ " = '"+ userId+ "' AND "+ Sqlite.COL_INSTANCE+ " = '"+ instance+ "' AND "+ Sqlite.COL_REBLOG+ " IS NOT NULL"+ " AND "+ Sqlite.COL_REBLOG+ " != ''",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.StatusCacheDAO.getStat()" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java" methodLine="605" callLine="622"></Call>
+    </CallStack>
+  </Query>
+  <Query id="25">
+    <Value>select count(*) from STATUSES_CACHE where CACHED_ACTION = '1' AND USER_ID = '{{na}}' AND INSTANCE = '{{na}}' AND IN_REPLY_TO_ID IS NOT NULL AND IN_REPLY_TO_ID != 'null' AND REBLOG IS NULL</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>StatusCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java</ExecFile>
+    <ExecLine>631</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_STATUSES_CACHE + " where "+ Sqlite.COL_CACHED_ACTION+ " = '"+ ARCHIVE_CACHE+ "' AND "+ Sqlite.COL_USER_ID+ " = '"+ userId+ "' AND "+ Sqlite.COL_INSTANCE+ " = '"+ instance+ "' AND "+ Sqlite.COL_IN_REPLY_TO_ID+ " IS NOT NULL"+ " AND "+ Sqlite.COL_IN_REPLY_TO_ID+ " != 'null'"+ " AND "+ Sqlite.COL_REBLOG+ " IS NULL",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.StatusCacheDAO.getStat()" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java" methodLine="605" callLine="631"></Call>
+    </CallStack>
+  </Query>
+  <Query id="26">
+    <Value>select count(*) from STATUSES_CACHE where CACHED_ACTION = '1' AND USER_ID = '{{na}}' AND INSTANCE = '{{na}}' AND MEDIA_ATTACHMENTS IS NOT NULL AND MEDIA_ATTACHMENTS !='{{na}}'  AND REBLOG IS NULL</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>StatusCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java</ExecFile>
+    <ExecLine>642</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_STATUSES_CACHE + " where "+ Sqlite.COL_CACHED_ACTION+ " = '"+ ARCHIVE_CACHE+ "' AND "+ Sqlite.COL_USER_ID+ " = '"+ userId+ "' AND "+ Sqlite.COL_INSTANCE+ " = '"+ instance+ "' AND "+ Sqlite.COL_MEDIA_ATTACHMENTS+ " IS NOT NULL"+ " AND "+ Sqlite.COL_MEDIA_ATTACHMENTS+ " !='"+ Helper.attachmentToStringStorage(new ArrayList&lt;&gt;())+ "' "+ " AND "+ Sqlite.COL_REBLOG+ " IS NULL",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.StatusCacheDAO.getStat()" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java" methodLine="605" callLine="642"></Call>
+    </CallStack>
+  </Query>
+  <Query id="27">
+    <Value>select count(*) from STATUSES_CACHE where CACHED_ACTION = '1' AND USER_ID = '{{na}}' AND INSTANCE = '{{na}}' AND SENSITIVE= 1 AND MEDIA_ATTACHMENTS IS NOT NULL AND MEDIA_ATTACHMENTS !='{{na}}'  AND REBLOG IS NULL</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>StatusCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java</ExecFile>
+    <ExecLine>652</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_STATUSES_CACHE + " where "+ Sqlite.COL_CACHED_ACTION+ " = '"+ ARCHIVE_CACHE+ "' AND "+ Sqlite.COL_USER_ID+ " = '"+ userId+ "' AND "+ Sqlite.COL_INSTANCE+ " = '"+ instance+ "' AND "+ Sqlite.COL_SENSITIVE+ "= 1 AND "+ Sqlite.COL_MEDIA_ATTACHMENTS+ " IS NOT NULL"+ " AND "+ Sqlite.COL_MEDIA_ATTACHMENTS+ " !='"+ Helper.attachmentToStringStorage(new ArrayList&lt;&gt;())+ "' "+ " AND "+ Sqlite.COL_REBLOG+ " IS NULL",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.StatusCacheDAO.getStat()" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java" methodLine="605" callLine="652"></Call>
+    </CallStack>
+  </Query>
+  <Query id="28">
+    <Value>select count(*) from STATUSES_CACHE where CACHED_ACTION = '1' AND USER_ID = '{{na}}' AND INSTANCE = '{{na}}' AND SPOILER_TEXT IS NOT NULL AND SPOILER_TEXT != ''  AND REBLOG IS NULL</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>StatusCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java</ExecFile>
+    <ExecLine>662</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_STATUSES_CACHE + " where "+ Sqlite.COL_CACHED_ACTION+ " = '"+ ARCHIVE_CACHE+ "' AND "+ Sqlite.COL_USER_ID+ " = '"+ userId+ "' AND "+ Sqlite.COL_INSTANCE+ " = '"+ instance+ "' AND "+ Sqlite.COL_SPOILER_TEXT+ " IS NOT NULL"+ " AND "+ Sqlite.COL_SPOILER_TEXT+ " != '' "+ " AND "+ Sqlite.COL_REBLOG+ " IS NULL",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.StatusCacheDAO.getStat()" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java" methodLine="605" callLine="662"></Call>
+    </CallStack>
+  </Query>
+  <Query id="29">
+    <Value>select count(*) from STATUSES_CACHE where CACHED_ACTION = '1' AND USER_ID = '{{na}}' AND INSTANCE = '{{na}}' AND VISIBILITY='public' AND REBLOG IS NULL</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>StatusCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java</ExecFile>
+    <ExecLine>671</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_STATUSES_CACHE + " where "+ Sqlite.COL_CACHED_ACTION+ " = '"+ ARCHIVE_CACHE+ "' AND "+ Sqlite.COL_USER_ID+ " = '"+ userId+ "' AND "+ Sqlite.COL_INSTANCE+ " = '"+ instance+ "' AND "+ Sqlite.COL_VISIBILITY+ "='public'"+ " AND "+ Sqlite.COL_REBLOG+ " IS NULL",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.StatusCacheDAO.getStat()" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java" methodLine="605" callLine="671"></Call>
+    </CallStack>
+  </Query>
+  <Query id="30">
+    <Value>select count(*) from STATUSES_CACHE where CACHED_ACTION = '1' AND USER_ID = '{{na}}' AND INSTANCE = '{{na}}' AND VISIBILITY='unlisted' AND REBLOG IS NULL</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>StatusCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java</ExecFile>
+    <ExecLine>680</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_STATUSES_CACHE + " where "+ Sqlite.COL_CACHED_ACTION+ " = '"+ ARCHIVE_CACHE+ "' AND "+ Sqlite.COL_USER_ID+ " = '"+ userId+ "' AND "+ Sqlite.COL_INSTANCE+ " = '"+ instance+ "' AND "+ Sqlite.COL_VISIBILITY+ "='unlisted'"+ " AND "+ Sqlite.COL_REBLOG+ " IS NULL",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.StatusCacheDAO.getStat()" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java" methodLine="605" callLine="680"></Call>
+    </CallStack>
+  </Query>
+  <Query id="31">
+    <Value>select count(*) from STATUSES_CACHE where CACHED_ACTION = '1' AND USER_ID = '{{na}}' AND INSTANCE = '{{na}}' AND VISIBILITY='private' AND REBLOG IS NULL</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>StatusCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java</ExecFile>
+    <ExecLine>689</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_STATUSES_CACHE + " where "+ Sqlite.COL_CACHED_ACTION+ " = '"+ ARCHIVE_CACHE+ "' AND "+ Sqlite.COL_USER_ID+ " = '"+ userId+ "' AND "+ Sqlite.COL_INSTANCE+ " = '"+ instance+ "' AND "+ Sqlite.COL_VISIBILITY+ "='private'"+ " AND "+ Sqlite.COL_REBLOG+ " IS NULL",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.StatusCacheDAO.getStat()" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java" methodLine="605" callLine="689"></Call>
+    </CallStack>
+  </Query>
+  <Query id="32">
+    <Value>select count(*) from STATUSES_CACHE where CACHED_ACTION = '1' AND USER_ID = '{{na}}' AND INSTANCE = '{{na}}' AND VISIBILITY='direct' AND REBLOG IS NULL</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>StatusCacheDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java</ExecFile>
+    <ExecLine>699</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_STATUSES_CACHE + " where "+ Sqlite.COL_CACHED_ACTION+ " = '"+ ARCHIVE_CACHE+ "' AND "+ Sqlite.COL_USER_ID+ " = '"+ userId+ "' AND "+ Sqlite.COL_INSTANCE+ " = '"+ instance+ "' AND "+ Sqlite.COL_VISIBILITY+ "='direct'"+ " AND "+ Sqlite.COL_REBLOG+ " IS NULL",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.StatusCacheDAO.getStat()" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/StatusCacheDAO.java" methodLine="605" callLine="699"></Call>
+    </CallStack>
+  </Query>
+  <Query id="33">
+    <Value>CREATE TABLE USER_ACCOUNT (USER_ID TEXT, USERNAME TEXT NOT NULL, ACCT TEXT NOT NULL, DISPLAYED_NAME TEXT NOT NULL, LOCKED INTEGER NOT NULL, FOLLOWERS_COUNT INTEGER NOT NULL, FOLLOWING_COUNT INTEGER NOT NULL, STATUSES_COUNT INTEGER NOT NULL, NOTE TEXT NOT NULL, URL TEXT NOT NULL, AVATAR TEXT NOT NULL, AVATAR_STATIC TEXT NOT NULL, HEADER TEXT NOT NULL, HEADER_STATIC TEXT NOT NULL, EMOJIS TEXT, SOCIAL TEXT, IS_MODERATOR INTEGER  DEFAULT 0, IS_ADMIN INTEGER  DEFAULT 0, CLIENT_ID TEXT, CLIENT_SECRET TEXT, REFRESH_TOKEN TEXT,UPDATED_AT TEXT, PRIVACY TEXT, SENSITIVE INTEGER DEFAULT 0, INSTANCE TEXT NOT NULL, OAUTH_TOKEN TEXT NOT NULL, CREATED_AT TEXT NOT NULL)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>382</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_USER_ACCOUNT)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onCreate(android.database.sqlite.SQLiteDatabase)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="380" callLine="382"></Call>
+    </CallStack>
+  </Query>
+  <Query id="34">
+    <Value>CREATE TABLE STATUSES_STORED (ID INTEGER PRIMARY KEY AUTOINCREMENT, USER_ID TEXT NOT NULL, INSTANCE TEXT NOT NULL, STATUS_SERIALIZED TEXT NOT NULL, STATUS_REPLY_SERIALIZED TEXT, DATE_CREATION TEXT NOT NULL, IS_SCHEDULED INTEGER NOT NULL, DATE_SCHEDULED TEXT, SENT INTEGER NOT NULL, DATE_SENT TEXT)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>383</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_STATUSES_STORED)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onCreate(android.database.sqlite.SQLiteDatabase)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="380" callLine="383"></Call>
+    </CallStack>
+  </Query>
+  <Query id="35">
+    <Value>CREATE TABLE CUSTOM_EMOJI (ID INTEGER PRIMARY KEY AUTOINCREMENT, SHORTCODE TEXT NOT NULL, INSTANCE TEXT NOT NULL, URL TEXT NOT NULL, URL_STATIC TEXT NOT NULL, DATE_CREATION TEXT NOT NULL)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>384</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_CUSTOM_EMOJI)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onCreate(android.database.sqlite.SQLiteDatabase)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="380" callLine="384"></Call>
+    </CallStack>
+  </Query>
+  <Query id="36">
+    <Value>CREATE TABLE SEARCH (ID INTEGER PRIMARY KEY AUTOINCREMENT, KEYWORDS TEXT NOT NULL, USER_ID TEXT NOT NULL, ANY_TAG TEXT, ALL_TAG TEXT, NONE_TAG TEXT, NAME TEXT, IS_ART INTEGER  DEFAULT 0, IS_NSFW INTEGER  DEFAULT 0, DATE_CREATION TEXT NOT NULL)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>385</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_SEARCH)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onCreate(android.database.sqlite.SQLiteDatabase)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="380" callLine="385"></Call>
+    </CallStack>
+  </Query>
+  <Query id="37">
+    <Value>CREATE TABLE TEMP_MUTE (ID INTEGER PRIMARY KEY AUTOINCREMENT, ACCT TEXT NOT NULL, INSTANCE TEXT NOT NULL, TARGETED_USER_ID TEXT NOT NULL, DATE_CREATION TEXT NOT NULL, DATE_END TEXT NOT NULL)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>386</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_TEMP_MUTE)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onCreate(android.database.sqlite.SQLiteDatabase)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="380" callLine="386"></Call>
+    </CallStack>
+  </Query>
+  <Query id="38">
+    <Value>CREATE TABLE STATUSES_CACHE (ID INTEGER PRIMARY KEY AUTOINCREMENT, CACHED_ACTION INTEGER NOT NULL, INSTANCE TEXT NOT NULL, USER_ID NOT NULL, DATE_BACKUP TEXT NOT NULL, STATUS_ID TEXT NOT NULL, URI TEXT NOT NULL, URL TEXT NOT NULL, ACCOUNT TEXT NOT NULL, IN_REPLY_TO_ID TEXT, IN_REPLY_TO_ACCOUNT_ID TEXT,REBLOG TEXT, CONTENT TEXT NOT NULL, CREATED_AT TEXT NOT NULL, EMOJIS TEXT, REBLOGS_COUNT INTEGER NOT NULL, FAVOURITES_COUNT INTEGER NOT NULL, REBLOGGED INTEGER, FAVOURITED INTEGER, MUTED INTEGER, SENSITIVE INTEGER, SPOILER_TEXT TEXT, VISIBILITY TEXT NOT NULL, MEDIA_ATTACHMENTS TEXT,CARD TEXT,MENTIONS TEXT, POLL TEXT, TAGS TEXT, APPLICATION TEXT,LANGUAGE TEXT,PINNED INTEGER)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>387</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_STATUSES_CACHE)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onCreate(android.database.sqlite.SQLiteDatabase)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="380" callLine="387"></Call>
+    </CallStack>
+  </Query>
+  <Query id="39">
+    <Value>CREATE UNIQUE INDEX instance_statusid on STATUSES_CACHE(INSTANCE,STATUS_ID,CACHED_ACTION)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>388</ExecLine>
+    <ExecString>db.execSQL(CREATE_UNIQUE_CACHE_INDEX)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onCreate(android.database.sqlite.SQLiteDatabase)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="380" callLine="388"></Call>
+    </CallStack>
+  </Query>
+  <Query id="40">
+    <Value>CREATE TABLE INSTANCES (ID INTEGER PRIMARY KEY AUTOINCREMENT, INSTANCE TEXT NOT NULL, USER_ID TEXT NOT NULL, INSTANCE_TYPE TEXT, TAGS TEXT, FILTERED_WITH TEXT, DATE_CREATION TEXT NOT NULL)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>389</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_INSTANCES)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onCreate(android.database.sqlite.SQLiteDatabase)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="380" callLine="389"></Call>
+    </CallStack>
+  </Query>
+  <Query id="41">
+    <Value>CREATE TABLE PEERTUBE_FAVOURITES(ID INTEGER PRIMARY KEY AUTOINCREMENT, UUID TEXT NOT NULL, INSTANCE TEXT NOT NULL, CACHE TEXT NOT NULL, DATE TEXT NOT NULL)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>390</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_PEERTUBE_FAVOURITES)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onCreate(android.database.sqlite.SQLiteDatabase)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="380" callLine="390"></Call>
+    </CallStack>
+  </Query>
+  <Query id="42">
+    <Value>CREATE TABLE CACHE_TAGS(ID INTEGER PRIMARY KEY AUTOINCREMENT, TAGS TEXT NOT NULL)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>391</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_CACHE_TAGS)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onCreate(android.database.sqlite.SQLiteDatabase)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="380" callLine="391"></Call>
+    </CallStack>
+  </Query>
+  <Query id="43">
+    <Value>CREATE TABLE BOOST_SCHEDULE (ID INTEGER PRIMARY KEY AUTOINCREMENT, USER_ID TEXT NOT NULL, INSTANCE TEXT NOT NULL, STATUS_SERIALIZED TEXT NOT NULL, DATE_SCHEDULED TEXT, IS_SCHEDULED INTEGER NOT NULL, SENT INTEGER NOT NULL, DATE_SENT TEXT)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>392</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_BOOST_SCHEDULE)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onCreate(android.database.sqlite.SQLiteDatabase)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="380" callLine="392"></Call>
+    </CallStack>
+  </Query>
+  <Query id="44">
+    <Value>CREATE TABLE TRACKING_BLOCK (ID INTEGER PRIMARY KEY AUTOINCREMENT, DOMAIN TEXT NOT NULL)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>393</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_TRACKING_BLOCK)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onCreate(android.database.sqlite.SQLiteDatabase)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="380" callLine="393"></Call>
+    </CallStack>
+  </Query>
+  <Query id="45">
+    <Value>CREATE TABLE IF NOT EXISTS TIMELINES (ID INTEGER PRIMARY KEY AUTOINCREMENT, POSITION INTEGER NOT NULL, USER_ID TEXT NOT NULL, INSTANCE TEXT NOT NULL, TYPE TEXT NOT NULL, REMOTE_INSTANCE TEXT, TAG_TIMELINE TEXT, DISPLAYED INTEGER NOT NULL, LIST_TIMELINE TEXT)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>394</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_TIMELINES)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onCreate(android.database.sqlite.SQLiteDatabase)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="380" callLine="394"></Call>
+    </CallStack>
+  </Query>
+  <Query id="46">
+    <Value>CREATE TABLE TIMELINE_CACHE(ID INTEGER PRIMARY KEY AUTOINCREMENT, STATUS_ID TEXT NOT NULL, INSTANCE TEXT NOT NULL, USER_ID TEXT NOT NULL, CACHE TEXT NOT NULL, DATE TEXT NOT NULL)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>395</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_TIMELINE_CACHE)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onCreate(android.database.sqlite.SQLiteDatabase)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="380" callLine="395"></Call>
+    </CallStack>
+  </Query>
+  <Query id="47">
+    <Value>CREATE TABLE NOTIFICATION_CACHE(ID INTEGER PRIMARY KEY AUTOINCREMENT, NOTIFICATION_ID TEXT NOT NULL, INSTANCE TEXT NOT NULL, USER_ID TEXT NOT NULL, ACCOUNT TEXT NOT NULL, TYPE TEXT NOT NULL, STATUS_ID TEXT, IN_REPLY_TO_ID TEXT, STATUS_ID_CACHE INTEGER, CREATED_AT TEXT NOT NULL)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>396</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_NOTIFICATIONS)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onCreate(android.database.sqlite.SQLiteDatabase)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="380" callLine="396"></Call>
+    </CallStack>
+  </Query>
+  <Query id="48">
+    <Value>CREATE TABLE MAIN_MENU_ITEMS(ID INTEGER PRIMARY KEY AUTOINCREMENT, USER_ID TEXT NOT NULL, INSTANCE TEXT NOT NULL, NAV_NEWS INTEGER  DEFAULT 1, NAV_LIST INTEGER  DEFAULT 1, NAV_SCHEDULED INTEGER  DEFAULT 1, NAV_ARCHIVE INTEGER  DEFAULT 1, NAV_ARCHIVE_NOTIFICATIONS INTEGER  DEFAULT 1, NAV_PEERTUBE INTEGER  DEFAULT 1, NAV_FILTERS INTEGER  DEFAULT 1, NAV_HOW_TO_FOLLOW INTEGER  DEFAULT 1, NAV_ADMINISTRATION INTEGER  DEFAULT 1, NAV_BLOCKED INTEGER  DEFAULT 1, NAV_MUTED INTEGER  DEFAULT 1, NAV_BLOCKED_DOMAINS INTEGER  DEFAULT 1, NAV_TRENDS INTEGER  DEFAULT 1, NAV_HOWTO INTEGER  DEFAULT 1)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>397</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_MAIN_MENU_ITEMS)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onCreate(android.database.sqlite.SQLiteDatabase)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="380" callLine="397"></Call>
+    </CallStack>
+  </Query>
+  <Query id="49">
+    <Value>CREATE TABLE USER_NOTES(ID INTEGER PRIMARY KEY AUTOINCREMENT, ACCT TEXT NOT NULL, NOTE TEXT, DATE_CREATION TEXT NOT NULL)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>398</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_USER_NOTES)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onCreate(android.database.sqlite.SQLiteDatabase)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="380" callLine="398"></Call>
+    </CallStack>
+  </Query>
+  <Query id="50">
+    <Value>CREATE TABLE STATUSES_STORED (ID INTEGER PRIMARY KEY AUTOINCREMENT, USER_ID TEXT NOT NULL, INSTANCE TEXT NOT NULL, STATUS_SERIALIZED TEXT NOT NULL, STATUS_REPLY_SERIALIZED TEXT, DATE_CREATION TEXT NOT NULL, IS_SCHEDULED INTEGER NOT NULL, DATE_SCHEDULED TEXT, SENT INTEGER NOT NULL, DATE_SENT TEXT)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>410</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_STATUSES_STORED)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="410"></Call>
+    </CallStack>
+  </Query>
+  <Query id="51">
+    <Value>DROP TABLE IF EXISTS STATUSES_STORED</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>412</ExecLine>
+    <ExecString>db.execSQL("DROP TABLE IF EXISTS " + TABLE_STATUSES_STORED)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="412"></Call>
+    </CallStack>
+  </Query>
+  <Query id="52">
+    <Value>CREATE TABLE STATUSES_STORED (ID INTEGER PRIMARY KEY AUTOINCREMENT, USER_ID TEXT NOT NULL, INSTANCE TEXT NOT NULL, STATUS_SERIALIZED TEXT NOT NULL, STATUS_REPLY_SERIALIZED TEXT, DATE_CREATION TEXT NOT NULL, IS_SCHEDULED INTEGER NOT NULL, DATE_SCHEDULED TEXT, SENT INTEGER NOT NULL, DATE_SENT TEXT)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>413</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_STATUSES_STORED)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="413"></Call>
+    </CallStack>
+  </Query>
+  <Query id="53">
+    <Value>CREATE TABLE CUSTOM_EMOJI (ID INTEGER PRIMARY KEY AUTOINCREMENT, SHORTCODE TEXT NOT NULL, INSTANCE TEXT NOT NULL, URL TEXT NOT NULL, URL_STATIC TEXT NOT NULL, DATE_CREATION TEXT NOT NULL)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>415</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_CUSTOM_EMOJI)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="415"></Call>
+    </CallStack>
+  </Query>
+  <Query id="54">
+    <Value>CREATE TABLE IF NOT EXISTS CUSTOM_EMOJI (ID INTEGER PRIMARY KEY AUTOINCREMENT, SHORTCODE TEXT NOT NULL, INSTANCE TEXT NOT NULL, URL TEXT NOT NULL, URL_STATIC TEXT NOT NULL, DATE_CREATION TEXT NOT NULL)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>417</ExecLine>
+    <ExecString>db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_CUSTOM_EMOJI + " ("+ COL_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT, "+ COL_SHORTCODE+ " TEXT NOT NULL, "+ COL_INSTANCE+ " TEXT NOT NULL, "+ COL_URL+ " TEXT NOT NULL, "+ COL_URL_STATIC+ " TEXT NOT NULL, "+ COL_DATE_CREATION+ " TEXT NOT NULL)")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="417"></Call>
+    </CallStack>
+  </Query>
+  <Query id="55">
+    <Value>delete from CUSTOM_EMOJI</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>422</ExecLine>
+    <ExecString>db.execSQL("delete from " + TABLE_CUSTOM_EMOJI)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="422"></Call>
+    </CallStack>
+  </Query>
+  <Query id="56">
+    <Value>CREATE TABLE SEARCH (ID INTEGER PRIMARY KEY AUTOINCREMENT, KEYWORDS TEXT NOT NULL, USER_ID TEXT NOT NULL, ANY_TAG TEXT, ALL_TAG TEXT, NONE_TAG TEXT, NAME TEXT, IS_ART INTEGER  DEFAULT 0, IS_NSFW INTEGER  DEFAULT 0, DATE_CREATION TEXT NOT NULL)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>424</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_SEARCH)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="424"></Call>
+    </CallStack>
+  </Query>
+  <Query id="57">
+    <Value>CREATE TABLE TEMP_MUTE (ID INTEGER PRIMARY KEY AUTOINCREMENT, ACCT TEXT NOT NULL, INSTANCE TEXT NOT NULL, TARGETED_USER_ID TEXT NOT NULL, DATE_CREATION TEXT NOT NULL, DATE_END TEXT NOT NULL)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>426</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_TEMP_MUTE)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="426"></Call>
+    </CallStack>
+  </Query>
+  <Query id="58">
+    <Value>CREATE TABLE STATUSES_CACHE (ID INTEGER PRIMARY KEY AUTOINCREMENT, CACHED_ACTION INTEGER NOT NULL, INSTANCE TEXT NOT NULL, USER_ID NOT NULL, DATE_BACKUP TEXT NOT NULL, STATUS_ID TEXT NOT NULL, URI TEXT NOT NULL, URL TEXT NOT NULL, ACCOUNT TEXT NOT NULL, IN_REPLY_TO_ID TEXT, IN_REPLY_TO_ACCOUNT_ID TEXT,REBLOG TEXT, CONTENT TEXT NOT NULL, CREATED_AT TEXT NOT NULL, EMOJIS TEXT, REBLOGS_COUNT INTEGER NOT NULL, FAVOURITES_COUNT INTEGER NOT NULL, REBLOGGED INTEGER, FAVOURITED INTEGER, MUTED INTEGER, SENSITIVE INTEGER, SPOILER_TEXT TEXT, VISIBILITY TEXT NOT NULL, MEDIA_ATTACHMENTS TEXT,CARD TEXT,MENTIONS TEXT, POLL TEXT, TAGS TEXT, APPLICATION TEXT,LANGUAGE TEXT,PINNED INTEGER)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>428</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_STATUSES_CACHE)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="428"></Call>
+    </CallStack>
+  </Query>
+  <Query id="59">
+    <Value>DROP TABLE IF EXISTS STATUSES_CACHE</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>430</ExecLine>
+    <ExecString>db.execSQL("DROP TABLE IF EXISTS " + TABLE_STATUSES_CACHE)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="430"></Call>
+    </CallStack>
+  </Query>
+  <Query id="60">
+    <Value>CREATE TABLE STATUSES_CACHE (ID INTEGER PRIMARY KEY AUTOINCREMENT, CACHED_ACTION INTEGER NOT NULL, INSTANCE TEXT NOT NULL, USER_ID NOT NULL, DATE_BACKUP TEXT NOT NULL, STATUS_ID TEXT NOT NULL, URI TEXT NOT NULL, URL TEXT NOT NULL, ACCOUNT TEXT NOT NULL, IN_REPLY_TO_ID TEXT, IN_REPLY_TO_ACCOUNT_ID TEXT,REBLOG TEXT, CONTENT TEXT NOT NULL, CREATED_AT TEXT NOT NULL, EMOJIS TEXT, REBLOGS_COUNT INTEGER NOT NULL, FAVOURITES_COUNT INTEGER NOT NULL, REBLOGGED INTEGER, FAVOURITED INTEGER, MUTED INTEGER, SENSITIVE INTEGER, SPOILER_TEXT TEXT, VISIBILITY TEXT NOT NULL, MEDIA_ATTACHMENTS TEXT,CARD TEXT,MENTIONS TEXT, POLL TEXT, TAGS TEXT, APPLICATION TEXT,LANGUAGE TEXT,PINNED INTEGER)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>431</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_STATUSES_CACHE)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="431"></Call>
+    </CallStack>
+  </Query>
+  <Query id="61">
+    <Value>DROP TABLE IF EXISTS STATUSES_CACHE</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>434</ExecLine>
+    <ExecString>db.execSQL("DROP TABLE IF EXISTS " + TABLE_STATUSES_CACHE)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="434"></Call>
+    </CallStack>
+  </Query>
+  <Query id="62">
+    <Value>CREATE TABLE STATUSES_CACHE (ID INTEGER PRIMARY KEY AUTOINCREMENT, CACHED_ACTION INTEGER NOT NULL, INSTANCE TEXT NOT NULL, USER_ID NOT NULL, DATE_BACKUP TEXT NOT NULL, STATUS_ID TEXT NOT NULL, URI TEXT NOT NULL, URL TEXT NOT NULL, ACCOUNT TEXT NOT NULL, IN_REPLY_TO_ID TEXT, IN_REPLY_TO_ACCOUNT_ID TEXT,REBLOG TEXT, CONTENT TEXT NOT NULL, CREATED_AT TEXT NOT NULL, EMOJIS TEXT, REBLOGS_COUNT INTEGER NOT NULL, FAVOURITES_COUNT INTEGER NOT NULL, REBLOGGED INTEGER, FAVOURITED INTEGER, MUTED INTEGER, SENSITIVE INTEGER, SPOILER_TEXT TEXT, VISIBILITY TEXT NOT NULL, MEDIA_ATTACHMENTS TEXT,CARD TEXT,MENTIONS TEXT, POLL TEXT, TAGS TEXT, APPLICATION TEXT,LANGUAGE TEXT,PINNED INTEGER)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>435</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_STATUSES_CACHE)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="435"></Call>
+    </CallStack>
+  </Query>
+  <Query id="63">
+    <Value>CREATE UNIQUE INDEX instance_statusid on STATUSES_CACHE(INSTANCE,STATUS_ID,CACHED_ACTION)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>436</ExecLine>
+    <ExecString>db.execSQL(CREATE_UNIQUE_CACHE_INDEX)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="436"></Call>
+    </CallStack>
+  </Query>
+  <Query id="64">
+    <Value>CREATE TABLE INSTANCES (ID INTEGER PRIMARY KEY AUTOINCREMENT, INSTANCE TEXT NOT NULL, USER_ID TEXT NOT NULL, INSTANCE_TYPE TEXT, TAGS TEXT, FILTERED_WITH TEXT, DATE_CREATION TEXT NOT NULL)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>438</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_INSTANCES)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="438"></Call>
+    </CallStack>
+  </Query>
+  <Query id="65">
+    <Value>ALTER TABLE USER_ACCOUNT ADD COLUMN EMOJIS TEXT</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>440</ExecLine>
+    <ExecString>db.execSQL("ALTER TABLE " + TABLE_USER_ACCOUNT + " ADD COLUMN "+ COL_EMOJIS+ " TEXT")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="440"></Call>
+    </CallStack>
+  </Query>
+  <Query id="66">
+    <Value>ALTER TABLE INSTANCES ADD COLUMN INSTANCE_TYPE TEXT</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>443</ExecLine>
+    <ExecString>db.execSQL("ALTER TABLE " + TABLE_INSTANCES + " ADD COLUMN "+ COL_INSTANCE_TYPE+ " TEXT")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="443"></Call>
+    </CallStack>
+  </Query>
+  <Query id="67">
+    <Value>CREATE TABLE PEERTUBE_FAVOURITES(ID INTEGER PRIMARY KEY AUTOINCREMENT, UUID TEXT NOT NULL, INSTANCE TEXT NOT NULL, CACHE TEXT NOT NULL, DATE TEXT NOT NULL)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>445</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_PEERTUBE_FAVOURITES)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="445"></Call>
+    </CallStack>
+  </Query>
+  <Query id="68">
+    <Value>ALTER TABLE STATUSES_CACHE ADD COLUMN CARD TEXT</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>448</ExecLine>
+    <ExecString>db.execSQL("ALTER TABLE " + TABLE_STATUSES_CACHE + " ADD COLUMN "+ COL_CARD+ " TEXT")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="448"></Call>
+    </CallStack>
+  </Query>
+  <Query id="69">
+    <Value>DROP TABLE IF EXISTS 'TIMELINE_CACHE'</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>451</ExecLine>
+    <ExecString>db.execSQL("DROP TABLE IF EXISTS '" + TABLE_TIMELINE_CACHE + "'")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="451"></Call>
+    </CallStack>
+  </Query>
+  <Query id="70">
+    <Value>CREATE TABLE CACHE_TAGS(ID INTEGER PRIMARY KEY AUTOINCREMENT, TAGS TEXT NOT NULL)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>452</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_CACHE_TAGS)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="452"></Call>
+    </CallStack>
+  </Query>
+  <Query id="71">
+    <Value>CREATE TABLE BOOST_SCHEDULE (ID INTEGER PRIMARY KEY AUTOINCREMENT, USER_ID TEXT NOT NULL, INSTANCE TEXT NOT NULL, STATUS_SERIALIZED TEXT NOT NULL, DATE_SCHEDULED TEXT, IS_SCHEDULED INTEGER NOT NULL, SENT INTEGER NOT NULL, DATE_SENT TEXT)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>454</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_BOOST_SCHEDULE)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="454"></Call>
+    </CallStack>
+  </Query>
+  <Query id="72">
+    <Value>ALTER TABLE SEARCH ADD COLUMN IS_ART INTEGER  DEFAULT 0</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>457</ExecLine>
+    <ExecString>db.execSQL("ALTER TABLE " + TABLE_SEARCH + " ADD COLUMN "+ COL_IS_ART+ " INTEGER  DEFAULT 0")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="457"></Call>
+    </CallStack>
+  </Query>
+  <Query id="73">
+    <Value>ALTER TABLE SEARCH ADD COLUMN IS_NSFW INTEGER  DEFAULT 0</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>458</ExecLine>
+    <ExecString>db.execSQL("ALTER TABLE " + TABLE_SEARCH + " ADD COLUMN "+ COL_IS_NSFW+ " INTEGER  DEFAULT 0")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="458"></Call>
+    </CallStack>
+  </Query>
+  <Query id="74">
+    <Value>ALTER TABLE SEARCH ADD COLUMN ANY_TAG TEXT</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>462</ExecLine>
+    <ExecString>db.execSQL("ALTER TABLE " + TABLE_SEARCH + " ADD COLUMN "+ COL_ANY+ " TEXT")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="462"></Call>
+    </CallStack>
+  </Query>
+  <Query id="75">
+    <Value>ALTER TABLE SEARCH ADD COLUMN ALL_TAG TEXT</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>463</ExecLine>
+    <ExecString>db.execSQL("ALTER TABLE " + TABLE_SEARCH + " ADD COLUMN "+ COL_ALL+ " TEXT")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="463"></Call>
+    </CallStack>
+  </Query>
+  <Query id="76">
+    <Value>ALTER TABLE SEARCH ADD COLUMN NONE_TAG TEXT</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>464</ExecLine>
+    <ExecString>db.execSQL("ALTER TABLE " + TABLE_SEARCH + " ADD COLUMN "+ COL_NONE+ " TEXT")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="464"></Call>
+    </CallStack>
+  </Query>
+  <Query id="77">
+    <Value>ALTER TABLE SEARCH ADD COLUMN NAME TEXT</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>468</ExecLine>
+    <ExecString>db.execSQL("ALTER TABLE " + TABLE_SEARCH + " ADD COLUMN "+ COL_NAME+ " TEXT")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="468"></Call>
+    </CallStack>
+  </Query>
+  <Query id="78">
+    <Value>ALTER TABLE USER_ACCOUNT ADD COLUMN SOCIAL TEXT</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>471</ExecLine>
+    <ExecString>db.execSQL("ALTER TABLE " + TABLE_USER_ACCOUNT + " ADD COLUMN "+ COL_SOCIAL+ " TEXT")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="471"></Call>
+    </CallStack>
+  </Query>
+  <Query id="79">
+    <Value>ALTER TABLE USER_ACCOUNT ADD COLUMN CLIENT_ID TEXT</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>473</ExecLine>
+    <ExecString>db.execSQL("ALTER TABLE " + TABLE_USER_ACCOUNT + " ADD COLUMN "+ COL_CLIENT_ID+ " TEXT")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="473"></Call>
+    </CallStack>
+  </Query>
+  <Query id="80">
+    <Value>ALTER TABLE USER_ACCOUNT ADD COLUMN CLIENT_SECRET TEXT</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>474</ExecLine>
+    <ExecString>db.execSQL("ALTER TABLE " + TABLE_USER_ACCOUNT + " ADD COLUMN "+ COL_CLIENT_SECRET+ " TEXT")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="474"></Call>
+    </CallStack>
+  </Query>
+  <Query id="81">
+    <Value>ALTER TABLE USER_ACCOUNT ADD COLUMN REFRESH_TOKEN TEXT</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>475</ExecLine>
+    <ExecString>db.execSQL("ALTER TABLE " + TABLE_USER_ACCOUNT + " ADD COLUMN "+ COL_REFRESH_TOKEN+ " TEXT")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="475"></Call>
+    </CallStack>
+  </Query>
+  <Query id="82">
+    <Value>ALTER TABLE USER_ACCOUNT ADD COLUMN IS_MODERATOR INTEGER  DEFAULT 0</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>477</ExecLine>
+    <ExecString>db.execSQL("ALTER TABLE " + TABLE_USER_ACCOUNT + " ADD COLUMN "+ COL_IS_MODERATOR+ " INTEGER  DEFAULT 0")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="477"></Call>
+    </CallStack>
+  </Query>
+  <Query id="83">
+    <Value>ALTER TABLE USER_ACCOUNT ADD COLUMN IS_ADMIN INTEGER  DEFAULT 0</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>478</ExecLine>
+    <ExecString>db.execSQL("ALTER TABLE " + TABLE_USER_ACCOUNT + " ADD COLUMN "+ COL_IS_ADMIN+ " INTEGER  DEFAULT 0")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="478"></Call>
+    </CallStack>
+  </Query>
+  <Query id="84">
+    <Value>ALTER TABLE USER_ACCOUNT ADD COLUMN UPDATED_AT TEXT</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>480</ExecLine>
+    <ExecString>db.execSQL("ALTER TABLE " + TABLE_USER_ACCOUNT + " ADD COLUMN "+ COL_UPDATED_AT+ " TEXT")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="480"></Call>
+    </CallStack>
+  </Query>
+  <Query id="85">
+    <Value>CREATE TABLE TRACKING_BLOCK (ID INTEGER PRIMARY KEY AUTOINCREMENT, DOMAIN TEXT NOT NULL)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>482</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_TRACKING_BLOCK)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="482"></Call>
+    </CallStack>
+  </Query>
+  <Query id="86">
+    <Value>CREATE TABLE IF NOT EXISTS TIMELINES (ID INTEGER PRIMARY KEY AUTOINCREMENT, POSITION INTEGER NOT NULL, USER_ID TEXT NOT NULL, INSTANCE TEXT NOT NULL, TYPE TEXT NOT NULL, REMOTE_INSTANCE TEXT, TAG_TIMELINE TEXT, DISPLAYED INTEGER NOT NULL, LIST_TIMELINE TEXT)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>484</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_TIMELINES)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="484"></Call>
+    </CallStack>
+  </Query>
+  <Query id="87">
+    <Value>ALTER TABLE USER_ACCOUNT ADD COLUMN PRIVACY TEXT</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>486</ExecLine>
+    <ExecString>db.execSQL("ALTER TABLE " + TABLE_USER_ACCOUNT + " ADD COLUMN "+ COL_PRIVACY+ " TEXT")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="486"></Call>
+    </CallStack>
+  </Query>
+  <Query id="88">
+    <Value>ALTER TABLE USER_ACCOUNT ADD COLUMN SENSITIVE INTEGER DEFAULT 0</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>487</ExecLine>
+    <ExecString>db.execSQL("ALTER TABLE " + TABLE_USER_ACCOUNT + " ADD COLUMN "+ COL_SENSITIVE+ " INTEGER DEFAULT 0")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="487"></Call>
+    </CallStack>
+  </Query>
+  <Query id="89">
+    <Value>CREATE TABLE TIMELINE_CACHE(ID INTEGER PRIMARY KEY AUTOINCREMENT, STATUS_ID TEXT NOT NULL, INSTANCE TEXT NOT NULL, USER_ID TEXT NOT NULL, CACHE TEXT NOT NULL, DATE TEXT NOT NULL)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>489</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_TIMELINE_CACHE)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="489"></Call>
+    </CallStack>
+  </Query>
+  <Query id="90">
+    <Value>ALTER TABLE INSTANCES ADD COLUMN TAGS TEXT</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>492</ExecLine>
+    <ExecString>db.execSQL("ALTER TABLE " + TABLE_INSTANCES + " ADD COLUMN "+ COL_TAGS+ " TEXT")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="492"></Call>
+    </CallStack>
+  </Query>
+  <Query id="91">
+    <Value>ALTER TABLE INSTANCES ADD COLUMN FILTERED_WITH TEXT</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>493</ExecLine>
+    <ExecString>db.execSQL("ALTER TABLE " + TABLE_INSTANCES + " ADD COLUMN "+ COL_FILTERED_WITH+ " TEXT")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="493"></Call>
+    </CallStack>
+  </Query>
+  <Query id="92">
+    <Value>CREATE TABLE USER_ACCOUNT_TEMP (USER_ID TEXT, USERNAME TEXT NOT NULL, ACCT TEXT NOT NULL, DISPLAYED_NAME TEXT NOT NULL, LOCKED INTEGER NOT NULL, FOLLOWERS_COUNT INTEGER NOT NULL, FOLLOWING_COUNT INTEGER NOT NULL, STATUSES_COUNT INTEGER NOT NULL, NOTE TEXT NOT NULL, URL TEXT NOT NULL, AVATAR TEXT NOT NULL, AVATAR_STATIC TEXT NOT NULL, HEADER TEXT NOT NULL, HEADER_STATIC TEXT NOT NULL, EMOJIS TEXT, SOCIAL TEXT, IS_MODERATOR INTEGER  DEFAULT 0, IS_ADMIN INTEGER  DEFAULT 0, CLIENT_ID TEXT, CLIENT_SECRET TEXT, REFRESH_TOKEN TEXT,UPDATED_AT TEXT, PRIVACY TEXT, SENSITIVE INTEGER DEFAULT 0, INSTANCE TEXT NOT NULL, OAUTH_TOKEN TEXT NOT NULL, CREATED_AT TEXT NOT NULL)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>512</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_USER_ACCOUNT_TEMP)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="512"></Call>
+    </CallStack>
+  </Query>
+  <Query id="93">
+    <Value>INSERT INTO USER_ACCOUNT_TEMP (USER_ID, USERNAME, ACCT, DISPLAYED_NAME, LOCKED, FOLLOWERS_COUNT, FOLLOWING_COUNT, STATUSES_COUNT, NOTE, URL, AVATAR, AVATAR_STATIC, HEADER, HEADER_STATIC, EMOJIS, SOCIAL, IS_MODERATOR, IS_ADMIN, CLIENT_ID, CLIENT_SECRET, REFRESH_TOKEN, UPDATED_AT, PRIVACY, SENSITIVE, INSTANCE, OAUTH_TOKEN, CREATED_AT)  SELECT USER_ID, USERNAME, ACCT, DISPLAYED_NAME, LOCKED, FOLLOWERS_COUNT, FOLLOWING_COUNT, STATUSES_COUNT, NOTE, URL, AVATAR, AVATAR_STATIC, HEADER, HEADER_STATIC, EMOJIS, SOCIAL, IS_MODERATOR, IS_ADMIN, CLIENT_ID, CLIENT_SECRET, REFRESH_TOKEN, UPDATED_AT, PRIVACY, SENSITIVE, INSTANCE, OAUTH_TOKEN, CREATED_AT FROM USER_ACCOUNT</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>525</ExecLine>
+    <ExecString>db.execSQL(insert)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="525"></Call>
+    </CallStack>
+  </Query>
+  <Query id="94">
+    <Value>DROP TABLE USER_ACCOUNT</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>526</ExecLine>
+    <ExecString>db.execSQL("DROP TABLE " + TABLE_USER_ACCOUNT)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="526"></Call>
+    </CallStack>
+  </Query>
+  <Query id="95">
+    <Value>ALTER TABLE USER_ACCOUNT_TEMP RENAME TO USER_ACCOUNT</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>527</ExecLine>
+    <ExecString>db.execSQL("ALTER TABLE " + TABLE_USER_ACCOUNT_TEMP + " RENAME TO "+ TABLE_USER_ACCOUNT)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="527"></Call>
+    </CallStack>
+  </Query>
+  <Query id="96">
+    <Value>CREATE TABLE NOTIFICATION_CACHE(ID INTEGER PRIMARY KEY AUTOINCREMENT, NOTIFICATION_ID TEXT NOT NULL, INSTANCE TEXT NOT NULL, USER_ID TEXT NOT NULL, ACCOUNT TEXT NOT NULL, TYPE TEXT NOT NULL, STATUS_ID TEXT, IN_REPLY_TO_ID TEXT, STATUS_ID_CACHE INTEGER, CREATED_AT TEXT NOT NULL)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>530</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_NOTIFICATIONS)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="530"></Call>
+    </CallStack>
+  </Query>
+  <Query id="97">
+    <Value>CREATE TABLE MAIN_MENU_ITEMS(ID INTEGER PRIMARY KEY AUTOINCREMENT, USER_ID TEXT NOT NULL, INSTANCE TEXT NOT NULL, NAV_NEWS INTEGER  DEFAULT 1, NAV_LIST INTEGER  DEFAULT 1, NAV_SCHEDULED INTEGER  DEFAULT 1, NAV_ARCHIVE INTEGER  DEFAULT 1, NAV_ARCHIVE_NOTIFICATIONS INTEGER  DEFAULT 1, NAV_PEERTUBE INTEGER  DEFAULT 1, NAV_FILTERS INTEGER  DEFAULT 1, NAV_HOW_TO_FOLLOW INTEGER  DEFAULT 1, NAV_ADMINISTRATION INTEGER  DEFAULT 1, NAV_BLOCKED INTEGER  DEFAULT 1, NAV_MUTED INTEGER  DEFAULT 1, NAV_BLOCKED_DOMAINS INTEGER  DEFAULT 1, NAV_TRENDS INTEGER  DEFAULT 1, NAV_HOWTO INTEGER  DEFAULT 1)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>532</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_MAIN_MENU_ITEMS)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="532"></Call>
+    </CallStack>
+  </Query>
+  <Query id="98">
+    <Value>DROP INDEX IF EXISTS instance_statusid</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>534</ExecLine>
+    <ExecString>db.execSQL("DROP INDEX IF EXISTS instance_statusid")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="534"></Call>
+    </CallStack>
+  </Query>
+  <Query id="99">
+    <Value>DELETE FROM STATUSES_CACHE</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>535</ExecLine>
+    <ExecString>db.execSQL("DELETE FROM " + TABLE_STATUSES_CACHE)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="535"></Call>
+    </CallStack>
+  </Query>
+  <Query id="100">
+    <Value>DELETE FROM NOTIFICATION_CACHE</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>536</ExecLine>
+    <ExecString>db.execSQL("DELETE FROM " + TABLE_NOTIFICATION_CACHE)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="536"></Call>
+    </CallStack>
+  </Query>
+  <Query id="101">
+    <Value>CREATE UNIQUE INDEX instance_statusid on STATUSES_CACHE(INSTANCE,STATUS_ID,CACHED_ACTION)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>537</ExecLine>
+    <ExecString>db.execSQL(CREATE_UNIQUE_CACHE_INDEX)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="537"></Call>
+    </CallStack>
+  </Query>
+  <Query id="102">
+    <Value>CREATE TABLE USER_NOTES(ID INTEGER PRIMARY KEY AUTOINCREMENT, ACCT TEXT NOT NULL, NOTE TEXT, DATE_CREATION TEXT NOT NULL)</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>539</ExecLine>
+    <ExecString>db.execSQL(CREATE_TABLE_USER_NOTES)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="539"></Call>
+    </CallStack>
+  </Query>
+  <Query id="103">
+    <Value>ALTER TABLE MAIN_MENU_ITEMS ADD COLUMN NAV_TRENDS INTEGER  DEFAULT 1</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>542</ExecLine>
+    <ExecString>db.execSQL("ALTER TABLE " + TABLE_MAIN_MENU_ITEMS + " ADD COLUMN "+ COL_NAV_TRENDS+ " INTEGER  DEFAULT 1")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="542"></Call>
+    </CallStack>
+  </Query>
+  <Query id="104">
+    <Value>ALTER TABLE STATUSES_CACHE ADD COLUMN POLL TEXT</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>Sqlite</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java</ExecFile>
+    <ExecLine>546</ExecLine>
+    <ExecString>db.execSQL("ALTER TABLE " + TABLE_STATUSES_CACHE + " ADD COLUMN "+ COL_POLL+ " TEXT")</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.Sqlite.onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/Sqlite.java" methodLine="406" callLine="546"></Call>
+    </CallStack>
+  </Query>
+  <Query id="105">
+    <Value>select count(*) from TIMELINES where USER_ID = '{{na}}' AND INSTANCE = '{{na}}' AND DISPLAYED= 1</Value>
+    <HotspotFinder>AndroidHotspotFinder</HotspotFinder>
+    <ExecPackage>app.fedilab.android.sqlite</ExecPackage>
+    <ExecClass>TimelinesDAO</ExecClass>
+    <ExecFile>D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/TimelinesDAO.java</ExecFile>
+    <ExecLine>118</ExecLine>
+    <ExecString>db.rawQuery("select count(*) from " + Sqlite.TABLE_TIMELINES + " where "+ Sqlite.COL_USER_ID+ " = '"+ userId+ "' AND "+ Sqlite.COL_INSTANCE+ " = '"+ instance+ "' AND "+ Sqlite.COL_DISPLAYED+ "= 1",null)</ExecString>
+    <CallStack>
+      <Call method="app.fedilab.android.sqlite.TimelinesDAO.countVisibleTimelines()" file="D:/Unamur/Evolution_de_systèmes_logiciels/fedilab/app/src/main/java/app/fedilab/android/sqlite/TimelinesDAO.java" methodLine="114" callLine="118"></Call>
+    </CallStack>
+  </Query>
+</Queries>

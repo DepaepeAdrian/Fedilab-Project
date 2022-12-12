@@ -1,0 +1,847 @@
+{
+	"Databases": [
+		{
+			"Name": "DB",
+			"Schemas": [
+				{
+					"Name": "SCH",
+					"Tables": [
+						{
+							"Name": "USER_ACCOUNT",
+							"Columns": [
+								{
+									"Name": "USER_ID",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "USERNAME",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "ACCT",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "DISPLAYED_NAME",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "LOCKED",
+									"Type": "INT"
+								},
+								{
+									"Name": "FOLLOWERS_COUNT",
+									"Type": "INT"
+								},
+								{
+									"Name": "FOLLOWING_COUNT",
+									"Type": "INT"
+								},
+								{
+									"Name": "STATUSES_COUNT",
+									"Type": "INT"
+								},
+								{
+									"Name": "NOTE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "URL",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "AVATAR",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "AVATAR_STATIC",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "HEADER",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "HEADER_STATIC",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "EMOJIS",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "SOCIAL",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "IS_MODERATOR",
+									"Type": "INT"
+								},
+								{
+									"Name": "IS_ADMIN",
+									"Type": "INT"
+								},
+								{
+									"Name": "CLIENT_ID",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "CLIENT_SECRET",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "REFRESH_TOKEN",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "UPDATED_AT",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "PRIVACY",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "SENSITIVE",
+									"Type": "INT"
+								},
+								{
+									"Name": "INSTANCE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "OAUTH_TOKEN",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "CREATED_AT",
+									"Type": "TEXT"
+								}
+							]
+						},
+						{
+							"Name": "STATUSES_STORED",
+							"Columns": [
+								{
+									"Name": "ID",
+									"Type": "INT"
+								},
+								{
+									"Name": "USER_ID",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "INSTANCE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "STATUS_SERIALIZED",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "STATUS_REPLY_SERIALIZED",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "DATE_CREATION",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "IS_SCHEDULED",
+									"Type": "INT"
+								},
+								{
+									"Name": "DATE_SCHEDULED",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "SENT",
+									"Type": "INT"
+								},
+								{
+									"Name": "DATE_SENT",
+									"Type": "TEXT"
+								}
+							]
+						},
+						{
+							"Name": "CUSTOM_EMOJI",
+							"Columns": [
+								{
+									"Name": "ID",
+									"Type": "INT"
+								},
+								{
+									"Name": "SHORTCODE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "INSTANCE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "URL",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "URL_STATIC",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "DATE_CREATION",
+									"Type": "TEXT"
+								}
+							]
+						},
+						{
+							"Name": "SEARCH",
+							"Columns": [
+								{
+									"Name": "ID",
+									"Type": "INT"
+								},
+								{
+									"Name": "KEYWORDS",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "USER_ID",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "ANY_TAG",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "ALL_TAG",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "NONE_TAG",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "NAME",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "IS_ART",
+									"Type": "INT"
+								},
+								{
+									"Name": "IS_NSFW",
+									"Type": "INT"
+								},
+								{
+									"Name": "DATE_CREATION",
+									"Type": "TEXT"
+								}
+							]
+						},
+						{
+							"Name": "TEMP_MUTE",
+							"Columns": [
+								{
+									"Name": "ID",
+									"Type": "INT"
+								},
+								{
+									"Name": "ACCT",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "INSTANCE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "TARGETED_USER_ID",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "DATE_CREATION",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "DATE_END",
+									"Type": "TEXT"
+								}
+							]
+						},
+						{
+							"Name": "STATUSES_CACHE",
+							"Columns": [
+								{
+									"Name": "ID",
+									"Type": "INT"
+								},
+								{
+									"Name": "CACHED_ACTION",
+									"Type": "INT"
+								},
+								{
+									"Name": "INSTANCE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "USER_ID",
+									"Type": "NUMERIC"
+								},
+								{
+									"Name": "DATE_BACKUP",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "STATUS_ID",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "URI",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "URL",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "ACCOUNT",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "IN_REPLY_TO_ID",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "IN_REPLY_TO_ACCOUNT_ID",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "REBLOG",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "CONTENT",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "CREATED_AT",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "EMOJIS",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "REBLOGS_COUNT",
+									"Type": "INT"
+								},
+								{
+									"Name": "FAVOURITES_COUNT",
+									"Type": "INT"
+								},
+								{
+									"Name": "REBLOGGED",
+									"Type": "INT"
+								},
+								{
+									"Name": "FAVOURITED",
+									"Type": "INT"
+								},
+								{
+									"Name": "MUTED",
+									"Type": "INT"
+								},
+								{
+									"Name": "SENSITIVE",
+									"Type": "INT"
+								},
+								{
+									"Name": "SPOILER_TEXT",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "VISIBILITY",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "MEDIA_ATTACHMENTS",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "CARD",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "MENTIONS",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "POLL",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "TAGS",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "APPLICATION",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "LANGUAGE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "PINNED",
+									"Type": "INT"
+								}
+							]
+						},
+						{
+							"Name": "INSTANCES",
+							"Columns": [
+								{
+									"Name": "ID",
+									"Type": "INT"
+								},
+								{
+									"Name": "INSTANCE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "USER_ID",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "INSTANCE_TYPE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "TAGS",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "FILTERED_WITH",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "DATE_CREATION",
+									"Type": "TEXT"
+								}
+							]
+						},
+						{
+							"Name": "PEERTUBE_FAVOURITES",
+							"Columns": [
+								{
+									"Name": "ID",
+									"Type": "INT"
+								},
+								{
+									"Name": "UUID",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "INSTANCE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "CACHE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "DATE",
+									"Type": "TEXT"
+								}
+							]
+						},
+						{
+							"Name": "CACHE_TAGS",
+							"Columns": [
+								{
+									"Name": "ID",
+									"Type": "INT"
+								},
+								{
+									"Name": "TAGS",
+									"Type": "TEXT"
+								}
+							]
+						},
+						{
+							"Name": "BOOST_SCHEDULE",
+							"Columns": [
+								{
+									"Name": "ID",
+									"Type": "INT"
+								},
+								{
+									"Name": "USER_ID",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "INSTANCE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "STATUS_SERIALIZED",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "DATE_SCHEDULED",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "IS_SCHEDULED",
+									"Type": "INT"
+								},
+								{
+									"Name": "SENT",
+									"Type": "INT"
+								},
+								{
+									"Name": "DATE_SENT",
+									"Type": "TEXT"
+								}
+							]
+						},
+						{
+							"Name": "TRACKING_BLOCK",
+							"Columns": [
+								{
+									"Name": "ID",
+									"Type": "INT"
+								},
+								{
+									"Name": "DOMAIN",
+									"Type": "TEXT"
+								}
+							]
+						},
+						{
+							"Name": "TIMELINES",
+							"Columns": [
+								{
+									"Name": "ID",
+									"Type": "INT"
+								},
+								{
+									"Name": "POSITION",
+									"Type": "INT"
+								},
+								{
+									"Name": "USER_ID",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "INSTANCE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "TYPE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "REMOTE_INSTANCE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "TAG_TIMELINE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "DISPLAYED",
+									"Type": "INT"
+								},
+								{
+									"Name": "LIST_TIMELINE",
+									"Type": "TEXT"
+								}
+							]
+						},
+						{
+							"Name": "TIMELINE_CACHE",
+							"Columns": [
+								{
+									"Name": "ID",
+									"Type": "INT"
+								},
+								{
+									"Name": "STATUS_ID",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "INSTANCE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "USER_ID",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "CACHE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "DATE",
+									"Type": "TEXT"
+								}
+							]
+						},
+						{
+							"Name": "NOTIFICATION_CACHE",
+							"Columns": [
+								{
+									"Name": "ID",
+									"Type": "INT"
+								},
+								{
+									"Name": "NOTIFICATION_ID",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "INSTANCE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "USER_ID",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "ACCOUNT",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "TYPE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "STATUS_ID",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "IN_REPLY_TO_ID",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "STATUS_ID_CACHE",
+									"Type": "INT"
+								},
+								{
+									"Name": "CREATED_AT",
+									"Type": "TEXT"
+								}
+							]
+						},
+						{
+							"Name": "MAIN_MENU_ITEMS",
+							"Columns": [
+								{
+									"Name": "ID",
+									"Type": "INT"
+								},
+								{
+									"Name": "USER_ID",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "INSTANCE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "NAV_NEWS",
+									"Type": "INT"
+								},
+								{
+									"Name": "NAV_LIST",
+									"Type": "INT"
+								},
+								{
+									"Name": "NAV_SCHEDULED",
+									"Type": "INT"
+								},
+								{
+									"Name": "NAV_ARCHIVE",
+									"Type": "INT"
+								},
+								{
+									"Name": "NAV_ARCHIVE_NOTIFICATIONS",
+									"Type": "INT"
+								},
+								{
+									"Name": "NAV_PEERTUBE",
+									"Type": "INT"
+								},
+								{
+									"Name": "NAV_FILTERS",
+									"Type": "INT"
+								},
+								{
+									"Name": "NAV_HOW_TO_FOLLOW",
+									"Type": "INT"
+								},
+								{
+									"Name": "NAV_ADMINISTRATION",
+									"Type": "INT"
+								},
+								{
+									"Name": "NAV_BLOCKED",
+									"Type": "INT"
+								},
+								{
+									"Name": "NAV_MUTED",
+									"Type": "INT"
+								},
+								{
+									"Name": "NAV_BLOCKED_DOMAINS",
+									"Type": "INT"
+								},
+								{
+									"Name": "NAV_TRENDS",
+									"Type": "INT"
+								},
+								{
+									"Name": "NAV_HOWTO",
+									"Type": "INT"
+								}
+							]
+						},
+						{
+							"Name": "USER_NOTES",
+							"Columns": [
+								{
+									"Name": "ID",
+									"Type": "INT"
+								},
+								{
+									"Name": "ACCT",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "NOTE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "DATE_CREATION",
+									"Type": "TEXT"
+								}
+							]
+						},
+						{
+							"Name": "USER_ACCOUNT_TEMP",
+							"Columns": [
+								{
+									"Name": "USER_ID",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "USERNAME",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "ACCT",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "DISPLAYED_NAME",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "LOCKED",
+									"Type": "INT"
+								},
+								{
+									"Name": "FOLLOWERS_COUNT",
+									"Type": "INT"
+								},
+								{
+									"Name": "FOLLOWING_COUNT",
+									"Type": "INT"
+								},
+								{
+									"Name": "STATUSES_COUNT",
+									"Type": "INT"
+								},
+								{
+									"Name": "NOTE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "URL",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "AVATAR",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "AVATAR_STATIC",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "HEADER",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "HEADER_STATIC",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "EMOJIS",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "SOCIAL",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "IS_MODERATOR",
+									"Type": "INT"
+								},
+								{
+									"Name": "IS_ADMIN",
+									"Type": "INT"
+								},
+								{
+									"Name": "CLIENT_ID",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "CLIENT_SECRET",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "REFRESH_TOKEN",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "UPDATED_AT",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "PRIVACY",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "SENSITIVE",
+									"Type": "INT"
+								},
+								{
+									"Name": "INSTANCE",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "OAUTH_TOKEN",
+									"Type": "TEXT"
+								},
+								{
+									"Name": "CREATED_AT",
+									"Type": "TEXT"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
