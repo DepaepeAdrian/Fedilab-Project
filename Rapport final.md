@@ -14,16 +14,27 @@ Dans ce rapport vous trouverez des références qui vous redirigerons vers notre
 
 ## Step 1 : Schémas, rétro ingénerie et fichier PML
 
-### 1.1 Creation du schema physique
-Rodrigue ou Mamadou
+Veuillez trouver [ici le dossier contenant les exports de SQLInspect](https://github.com/DepaepeAdrian/Fedilab-Project/tree/main/Annexes/Step%201/export_SQLInspect)
 
+### 1.1 Creation du schema logique
+Retrouvez [ici le DDL du schema logique](https://github.com/DepaepeAdrian/Fedilab-Project/blob/main/Annexes/Step%201/fedilabSQLlite_DDL_Logical_Schema.sql)
+
+Modèle entité-relation du schéma de base <br/>
+![alt text](https://github.com/DepaepeAdrian/Fedilab-Project/blob/main/Annexes/Step%201/ER_diagram.jpg?raw=true)
 
 ### 1.2 Recherches sur les foreign keys implicites
-Ceux qui ont trouvé des clés. Explications 
+Le schema de base de données du projet Fedilab ne contient aucune clé étrangère explicite. <br/>
+Pour trouver des clés étrangères explicites nous avons dans un premier temps procédé à une détection visuelle depuis le schéma de base et ensuite par la recherche au niveau des requêtes dans le code. <br/>
 
+![alt text](https://github.com/DepaepeAdrian/Fedilab-Project/blob/main/Annexes/Step%201/Schema-enriched_by_implicit_FKs.JPG?raw=true)
+
+Vous pouvez retrouver le pdf contenant [ici le résultat de cette recherche de clés étrangères implicites](https://github.com/DepaepeAdrian/Fedilab-Project/blob/main/Annexes/Step%201/Schema-enriched_by_implicit_FKs.pdf)
 
 ### 1.3 Creation du schema logique enrichi
-Rodrigue
+Retrouvez [ici le DDL du schema logique enrichi](https://github.com/DepaepeAdrian/Fedilab-Project/blob/main/Annexes/Step%201/fedilabSQLlite_DDL_Logical_Schema_enriched.sql)  <br/>
+
+Modèle entité-relation du schéma enrichi <br/>
+![alt text](https://github.com/DepaepeAdrian/Fedilab-Project/blob/main/Annexes/Step%201/ER_diagram_enriched.jpg?raw=true)
 
 ### 1.4 Creation du fichier PML
  apres SL enrichi, Adrian fait le PML 
