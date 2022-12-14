@@ -63,20 +63,35 @@ Adrian fin
 
 ### Scenario 1 
 
-#### Supprimer la table USER_TEMP
+#### Supprimer la table USER_ACCOUNT_TEMP
+la suppression de la table USER_ACCOUNT_TEMP ne change rien sur le fonctionnement de l'application; car elle a été créé pour faire une mise à jour de l'application à un moment donné.
+après analyse des requettes nous avons tracé le déroulement de ces operations comme suit.
+1) création de la table  USER_ACCOUNT et ajout des colonnes
+2) création de la table USER_ACCOUNT_TEMP et ajout de colonnes à partir de la table USER_ACCOUNT
+3) suppression de la table USER_ACCOUNT
+4) renommage de la table USER_ACCOUNT_TEMP en USER_ACCOUNT
+
 
 Rodrigue
 
 
 ### Scenario 2
+
  
-#### Supprimer une colonne liée a une autre colonne
+#### Supprimer une colonne liée a une autre colonne (supression de la colonne USER_ID de la table USER_ACCOUNT)
+
+la supression de la colonne USER_ID de la table USER_ACCOUNT provoquerai une panne de l'application car elle est la clé primaire de la table USER_ACCOUNT et elle sert aussi de clé étrangère pour referencer d'autres tables comme NOTIFICATION_CACHE, MAIN_MENU_ITEMS, BOOST_SCHEDULED, TIMELINE_CACHE,INSTANCES, STATUSES_STORES, STATUSES_CACHE, TIMELINE, SEARCH.
+
+en plus il est noté dans le code SQL comme NOT NULL cequi revèle son importance pour l'application, si elle est supprimé les comptes des utilisateurs ne pourront plus etre identifiés.
 
 Rodrigue
 
 ### Scenario 3
  
-#### ajouter xx
+#### ajouter une colonne à la table table USER_ACCOUNT
+
+l'ajout d'une colonne à table USER_ACCOUNT constitue l'ajout d'une information suplementaire dans la base de donnée de l'application; 
+dans le cas ou elle est mappé dans le programe elle servira d'ajout d'une nouvelle fonctionalité.
 
 Rodrigue 
 
