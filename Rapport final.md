@@ -25,6 +25,8 @@ Modèle entité-relation du schéma de base <br/>
 ### 1.2 Recherches sur les foreign keys implicites
 Le schema de base de données du projet Fedilab ne contient aucune clé étrangère explicite. <br/>
 Pour trouver des clés étrangères explicites nous avons dans un premier temps procédé à une détection visuelle depuis le schéma de base et ensuite par la recherche au niveau des requêtes dans le code. <br/>
+Il est à noter qu'avec la détection visuelle on a eu à repéter certaines colonnes communes à différentes tables mais qui se sont avérées être des faux négatifs car l'investigation dans le code a permis <br/>
+de confirmer que ce ne sont pas des clés étrangères, c'est le cas par exemple d'attributs de type Boolean SENSITIVE qu'on retrouve dans les tables STATUSES_CACHE, USER_ACCOUNT et USER_ACCOUNT_TEMP.
 
 ![alt text](https://github.com/DepaepeAdrian/Fedilab-Project/blob/main/Annexes/Step%201/Schema-enriched_by_implicit_FKs.JPG?raw=true)
 
@@ -97,18 +99,21 @@ Rodrigue
 
 ### Scenario 4
  
-#### ajouter xx
-Mamadou  statuses_cache
+#### Supprimer la table STATUSES_CACHE
+La suppression de la table STATUSES_CACHE va entrainer un disfonctionnement au niveau de l'application car celle-ci son ID est utilisé dans la création d'autres tables.
+Pour remédier à ces conséquences il faudra procéder à un refactoring au niveau de certaines tables de la base de données et aussi au niveau du code en supprimant toutes les reférences à cette table.
 
 ### Scenario 5
  
-#### ajouter xx
-Mamadou  statuses_cache
+#### Supprimer la colonne URI de la table STATUSES_CACHE
+La suppression de cette colonne n'aura aucune conséquence au niveau du schéma courant de la base de données, cependant il faudra procéder à des adaptations au niveau du code dans la classe StatusCacheDAO.java.<br/>
+Toutes les références à cette colonnes devront être supprimées pour éviter des erreurs du genre NullpointerException.
 
 ### Scenario 6
  
-#### ajouter xx
-Mamadou  statuses_cache
+#### Ajouter une nouvelle colonne dans la table STATUSES_CACHE
+L'ajout d'une nouvelle colonne se fera par un nouveau script DDL pour cette table.<br/>
+Une adaptation sera aussi nécessaire au niveau de la table StatusCacheDAO.java afin de définir la valeur de l'attribut qui va représenter cette colonne lors de la création d'une instance de cette table.
 
 ### Scenario 7
  
