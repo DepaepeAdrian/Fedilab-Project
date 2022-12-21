@@ -127,16 +127,19 @@ Adrian je cherche
 
 ### Scenario 9
  
-#### ajouter xx
-kouakou au choix sur autre table que statuses_cache &  Emoji  & USER_TEMP
+#### Suppression de la tables Instances
+La suppression d'une table supprimera définitivement la table et toutes ses données de la base de données.
+la table a des contraintes de clés étrangères qui la référencent (12 tables). Ces tables devront être également supprimées avant, ou modifier.
+Cette table semble donc être cruciale pour le fonctionnement de l'application au regard  que du code SQLite. 
+
+kouakou 
 
 ### Scenario 10
  
-#### ajouter xx
-kouakou au choix sur autre table que statuses_cache &  Emoji  & USER_TEMP
+#### Modification de la Table CUSTOM_EMOJI
+Les modifications des colonnes sur la table CUSTOM_EMOJI sont possibles, à l'exception de la colonne INSTANCE, qui référence la table INSTANCES. Toute modification de cette colonne qui supprime cette entrée n'a aucun impact sur le fonctionnement de la table et de la base de donnée0. Par contre l'insertion ou la mise à jour d'une valeur de cette collone doit vérifier avant l'existence de cette valeur dans la table INSTANCE.
 
-
-
+kouakou 
 
 
 
