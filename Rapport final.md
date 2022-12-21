@@ -127,11 +127,9 @@ Adrian je cherche
 
 ### Scenario 9
  
-#### Suppression de la tables Instances
+#### Suppression de la tables INSTANCES
 La suppression d'une table supprimera définitivement la table et toutes ses données de la base de données.
-la table a des contraintes de clés étrangères qui la référencent (12 tables). Ces tables devront être également supprimées avant, ou modifier.
-Cette table semble donc être cruciale pour le fonctionnement de l'application au regard  que du code SQLite. 
-
+la table a des contraintes de clés étrangères qui la référencent (12 tables). Ces tables devront être également supprimées avant de pouvoir supprimer la table, ou modifiées pour retirer la dépendance. Cette table semble donc être cruciale pour le fonctionnement de l'application, compte tenu du code SQLite.
 kouakou 
 
 ### Scenario 10
