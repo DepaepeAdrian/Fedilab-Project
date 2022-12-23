@@ -5,11 +5,11 @@
 -- Logical Database Schema
 -- _____________ 
 
-drop database IF EXISTS Fedilab;
+--drop database IF EXISTS Fedilab;
 
-create database IF NOT EXISTS Fedilab;
+--create database IF NOT EXISTS Fedilab;
 
-use Fedilab;
+--use Fedilab;
 
 CREATE TABLE  IF NOT EXISTS USER_ACCOUNT (USER_ID VARCHAR(255) PRIMARY KEY NOT NULL,
 USERNAME TEXT NOT NULL,
