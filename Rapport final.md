@@ -52,14 +52,26 @@ Ceux-ci aident à mieux visualiser la structure des différentes requêtes.
 Afin d'avoir une meilleur compréhension des explications, vous trouverez [ici les différents graphes](https://github.com/DepaepeAdrian/Fedilab-Project/blob/main/Annexes/Step%202/Query_Statistics_Schema%20.pdf) qui donnent une visualisation de la situation.
 Sur le graphe de la première page, il est rapidement lisible que chaque type de requêtes n'est pas représenté de façon équivalente.
 Il existe un gros podium composé des requêtes CREATE(37%), SELECT(29%) et ALTER (22%) qui à eux trois représentent 88% des requêtes.
-Les douzes pourcent restants se composent de trois autres types de requêtes DROP (5,7%) DELETE (4,7%) et INSERT (1%) qui sont ici sous représentées.
+Les douze pourcent restants se composent de trois autres types de requêtes DROP (5,7%) DELETE (4,7%) et INSERT (1%) qui sont ici sous représentées.
 
 Ensuite, sur le graphe en page 2, il est évident que la longueur des requêtes est assez variable, ce qui est tout à fait normal.
 Mais il est possible d'en sortir quelques statistiques intéressantes.
 La grande majorité des requêtes (91,5%) ne dépasse pas les 38 mots. Toujours en majorité, 62% des requêtes ne dépassent 17 mots.
 Ce qui pourrait tendre à croire que la majorité des requêtes sont assez simple, du fait que celles-ci soient assez courte.
 
-Adrian fin
+Pour terminer, la répartition des requêtes dans les classes JAVA sont généralement regroupées par type de requête. (Graphe 3)
+Sur les 105 requêtes, 72 d’entre-elles sont dans la classe SQLite. Cette classe regroupe les requêtes ALTER TABLE, CREATE, DELETE,DROP,INSERT. A l’exception de 2 requêtes qui se trouvent dans 2 autres classes distinctes.
+Les 33 requêtes SELECT sont reparties dans 5 classes mais 30 d’entre-elles sont dans 2 classes NotificationCacheDAO et StatusCacheDAO.
+
+
+### Pourcentage des tables utilisées
+
+Il existe 18 tables dans le code DDL, elles se semble être toutes utilisées à l’exception de la table USER_ACCOUNT. 
+Celle-ci est supprimée et remplacée par la table temporaire USER_ACCOUNT_TEMP. Qui n’est désormais plus une table temporaire mais une des tables principales de ma DB
+
+Ce qui nous fait une utilisation de 94% des tables de la DB.
+
+
 
 ## Step 3 : What if ? 10 scénarios possibles.
 
@@ -118,7 +130,7 @@ Une adaptation sera aussi nécessaire au niveau de la table StatusCacheDAO.java 
 ### Scenario 7
  
 #### ajouter xx
-Adrian Emoji table
+Adrian Emoji table suppression
 
 ### Scenario 8
  
@@ -144,6 +156,10 @@ kouakou
 ##  Step 4 : Critiques sur la DB et le projet 
 
 ### Points positifs
+
+La DB est globalement bien écrite, les noms des tables et colonnes sont très explicites. Il a donc été facile de se repérer grâce aux noms retrouvés dans les tables. La nomenclature est globalement bien respectée. Une clé primaire est reconnaissable facilement car il y a toujours un complément _ID dans le nom de l’attribut. 
+De plus, les attributs reliés d’une table à l’autre avec une FK ont le même nom ou presque le même. Ce qui a facilité le travail de recherche des clés étrangères, c’était un indice de base solide pour y commencer les recherches.
+
 
 ### Points negatifs
 
