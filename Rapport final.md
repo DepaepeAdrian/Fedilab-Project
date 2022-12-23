@@ -161,7 +161,7 @@ La DB est globalement bien écrite, les noms des tables et colonnes sont très e
 De plus, les attributs reliés d’une table à l’autre avec une FK ont le même nom ou presque le même. Ce qui a facilité le travail de recherche des clés étrangères, c’était un indice de base solide pour y commencer les recherches.
 
 
-Les requetes sont gregroupés dans une classe. 
+Les requetes sont gregroupés dans une classe ce qui permets de gérer tous les problèmes de database à un seul endroit. 
 Kouakou
 
 ### Points negatifs
