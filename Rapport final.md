@@ -163,7 +163,8 @@ De plus, les attributs reliés d’une table à l’autre avec une FK ont le mê
 
 ### Points negatifs
 La non-spécification explicite des clés étrangères dans les tables 
-Code pas trop commenté 
+
+le Code n'est pas trop commenté 
 rodrigue
 ### Conclusion
 
