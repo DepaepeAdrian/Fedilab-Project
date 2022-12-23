@@ -161,11 +161,31 @@ La DB est globalement bien écrite, les noms des tables et colonnes sont très e
 De plus, les attributs reliés d’une table à l’autre avec une FK ont le même nom ou presque le même. Ce qui a facilité le travail de recherche des clés étrangères, c’était un indice de base solide pour y commencer les recherches.
 
 
+Les requetes sont gregroupés dans une classe. 
+Kouakou
+
 ### Points negatifs
 La non-spécification explicite des clés étrangères dans les tables 
 
 le Code n'est pas trop commenté en général 
 
 rodrigue
+
+
+Mots réservés du langage SQL et/ou SQLite utilisés comme nom de table ou Attribut. le code n'est pas facilement portable. 
+- Attribut language dans la table STATUSES_CACHE
+- Attribut sensitive dans table STATUSES_CACHE, USER_ACCOUNT, USER_ACCOUNT_TEMP
+- Attribut instance  => BOOST_SCHEDULED, CUSTOM_EMOJI, INSTANCES MAIN_MENU_ITEMS 
+			NOTIFICATON_CACHE,PEETUBE_FAVOURITES, STATUSES_CACHE, 
+			STATUSES_STORED, TEMP_MUTE, TIMELINE_CACHE, TIMELINES, TIMELINE_CACHE
+   
+le noms des  tables et attributs ne sont pas très significatifs et peuvent pêtrer à confusion dans leur exploitation par le code. Il pourrait être utile d'utiliser une nomenclature systematique qui permettrait de reconnaitre a quoi fait reférence un nom de variable. Par exemple "t_nomdetable" pour tout les tables et "ID_nomdetable3 pour les ID ou encore "instance_nomdetable" comme nom des attributs "instance" présents dans plusieurs tables.
+   
+L'utilisation de "TEXT" comme type des dates dans plusieurs tables. Il serait peut-être plus approprié d'utiliser le type de données "DATETIME" pour cette colonne.
+
+La gestion des jointure au niveau du code fait que la Database n'est ni exploitable, ni compréhenssible sans l'implementation du code. Ceci cause plusieurs soucis. On pourrait par exemble supprimer les données d'une table sans respecter la contrainte d'intégrité; exemple supprimer une table qui est référencée par une autre table comme clé étangère sans alerte. Aussi on ne saurait pas  déléguer cette partie de l'application à un addministrateur de Base de données ou changer facilement de SGBD.
+
+Kouakou
+
 ### Conclusion
 
