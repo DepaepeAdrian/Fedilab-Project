@@ -400,6 +400,7 @@ physical schemas {
 		
 		table USER_ACCOUNT {
 			columns {
+				USER_ID,
 				USERNAME  ,
 				ACCT  ,
 				DISPLAYED_NAME  ,
@@ -428,11 +429,16 @@ physical schemas {
 				CREATED_AT
 
 					}
-				}
+			references {
+				 instance_by : INSTANCE -> INSTANCES.ID
+				 emoji_used : EMOJIS -> CUSTOM_EMOJI.ID
+				 }
+			}
 
 		
 		table STATUSES_STORED {
 			columns {
+				ID,
 				USER_ID  ,
 				INSTANCE  ,
 				STATUS_SERIALIZED  ,
@@ -443,22 +449,31 @@ physical schemas {
 				SENT  ,
 				DATE_SENT 
 					}
+			references {
+				 instance_by : INSTANCE -> INSTANCES.ID
+				 used_by : USER_ID -> USER_ACCOUNT.USER_ID
+				}
 				}
 			
 
 		table CUSTOM_EMOJI {
 			columns {
+				ID,
 				DATE_CREATION  ,
 				INSTANCE  ,
 				SHOERTCODE  ,
 				URL  ,
 				URL_STATIC 
 					}
+			references {
+				 instance_by : INSTANCE -> INSTANCES.ID
+				}
 				}
 			
 		
 		table  SEARCH{
 			columns {
+				ID,
 				KEYWORDS  ,
 				USER_ID  ,
 				ANY_TAG  ,
@@ -469,21 +484,30 @@ physical schemas {
 				IS_NSFW  ,
 				DATE_CREATION 
 					}
+			references {
+				 used_by : USER_ID -> USER_ACCOUNT.USER_ID
+				}
 				}
 			
 		table TEMP_MUTE  {
 			columns {
+				ID,
 				ACCT  ,
 				INSTANCE  ,
 				TARGETED_USER_ID  ,
 				DATE_CREATION  ,
 				DATE_END
 					}
+         references {
+				 instance_by : INSTANCE -> INSTANCES.ID
+				 used_by : TARGETED_USER_ID -> USER_ACCOUNT.USER_ID
+				}
 				}
 			
 			
 		table STATUSES_CACHE {
 			columns {
+				ID,
 				CACHED_ACTION  ,
 				INSTANCE  ,
 				USER_ID  ,
@@ -515,11 +539,17 @@ physical schemas {
 				LANGUAGE ,
 				PINNED
 					}
+			references {
+				 instance_by : INSTANCE -> INSTANCES.ID
+				 status_by : STATUS_ID -> STATUSES_CACHE.ID
+				 used_by : USER_ID -> USER_ACCOUNT.USER_ID
+				}
 				}
 			
 			
 		table USER_ACCOUNT_TEMP {
 			columns {
+				USER_ID,
 				USERNAME  ,
 				ACCT  ,
 				DISPLAYED_NAME  ,
@@ -547,11 +577,16 @@ physical schemas {
 				OAUTH_TOKEN  ,
 				CREATED_AT
 					}
+			references {
+				 instance_by : INSTANCE -> INSTANCES.ID
+
+				}
 				}
 			
 
 		table INSTANCES {
 			columns {
+				ID ,
 				INSTANCE  ,
 				USER_ID  ,
 				INSTANCE_TYPE  ,
@@ -559,21 +594,29 @@ physical schemas {
 				FILTERED_WITH  ,
 				DATE_CREATION 
 					}
+         references {
+				 used_by : USER_ID -> USER_ACCOUNT.USER_ID
+				}
 				}
 			
 
 		table PEERTUBE_FAVOURITES {
 			columns {
+				ID,
 				UUID  ,
 				INSTANCE  ,
 				CACHE  ,
 				DATE 
-									}
+					}
+         references {
+				 instance_by : INSTANCE -> INSTANCES.ID
+				}					
 				}
 		
 
 		table  CACHE_TAGS{
 			columns {
+				ID,
 				TAGS
 					}
 				}
@@ -581,6 +624,7 @@ physical schemas {
 	
 		table BOOST_SCHEDULE {
 			columns {
+				ID,
 				USER_ID  ,
 				INSTANCE  ,
 				STATUS_SERIALIZED  ,
@@ -589,17 +633,23 @@ physical schemas {
 				SENT  ,
 				DATE_SENT
 					}
+         references {
+				 instance_by : INSTANCE -> INSTANCES.ID
+				 used_by : USER_ID -> USER_ACCOUNT.USER_ID
+				}
 				}
 			
 
 		table TRACKING_BLOCK {
 			columns {
+				ID,
 				DOMAIN 
 					}
 				}
 			
 		table TIMELINES {
 			columns {
+				ID,
 				POSITION  ,
 				USER_ID  ,
 				INSTANCE  ,
@@ -609,22 +659,33 @@ physical schemas {
 				DISPLAYED  ,
 				LIST_TIMELINE
 					}
+			references {
+				 instance_by : INSTANCE -> INSTANCES.ID
+				 used_by : USER_ID -> USER_ACCOUNT.USER_ID
+				}
 				}
 			
 
 		table  TIMELINE_CACHE {
 			columns {
+				ID,
 				STATUS_ID   ,
 				INSTANCE  ,
 				USER_ID  ,
 				CACHE  ,
 				DATE 
 					}
+         references {
+				 instance_by : INSTANCE -> INSTANCES.ID
+				 status_by : STATUS_ID -> STATUSES_CACHE.ID
+				 used_by : USER_ID -> USER_ACCOUNT.USER_ID
+				}
 				}
 			
 	
 		table NOTIFICATION_CACHE {
 			columns {
+				ID,
 				NOTIFICATION_ID  ,
 				INSTANCE  ,
 				USER_ID  ,
@@ -635,6 +696,12 @@ physical schemas {
 				STATUS_ID_CACHE  ,
 				CREATED_AT 
 					}
+         references {
+				 instance_by : INSTANCE -> INSTANCES.ID
+				 statuscache_by : STATUS_ID_CACHE -> STATUSES_STORED.ID
+				 status_by : STATUS_ID -> STATUSES_CACHE.ID
+				 used_by : USER_ID -> USER_ACCOUNT.USER_ID
+				}
 				}
 			
 	
@@ -657,6 +724,10 @@ physical schemas {
 				NAV_TRENDS  ,
 				NAV_HOWTO 
 					}
+         references {
+				 instance_by : INSTANCE -> INSTANCES.ID
+				 used_by : USER_ID -> USER_ACCOUNT.USER_ID
+				}					
 				}
 			
 	
@@ -672,26 +743,14 @@ physical schemas {
 }								
 
 mapping rules{
-	conceptualSchema.Actor(id,fullName,yearOfBirth,yearOfDeath) -> IMDB_Mongo.actorCollection(id,fullname,birthyear,deathyear),
-	conceptualSchema.movieActor.character-> IMDB_Mongo.actorCollection.movies(),
-	conceptualSchema.Director(id,firstName,lastName, yearOfBirth,yearOfDeath) -> myRelSchema.directorTable(id,firstname,lastname,birth,death),
-	conceptualSchema.movieDirector.director -> myRelSchema.directed.directed_by,
-	conceptualSchema.movieDirector.directed_movie -> myRelSchema.directed.has_directed,
-	conceptualSchema.movieDirector.directed_movie -> myRelSchema.directed.movie_info,
-	conceptualSchema.Movie(id) -> movieRedis.movieKV(id),
-	conceptualSchema.Movie(primaryTitle,originalTitle,isAdult,startYear,runtimeMinutes) ->movieRedis.movieKV(title,originalTitle,isAdult,startYear,runtimeMinutes), 
-	conceptualSchema.Movie(averageRating,numVotes) -> IMDB_Mongo.actorCollection.movies.rating(rate,numberofvotes),
-	conceptualSchema.Movie(id, primaryTitle) -> IMDB_Mongo.actorCollection.movies(id,title)
-}
-
-
-databases {
-	sqlite mydb {
-		host: localhost
-		port: 3307
-		login: "root"
-		password: "password"
-	}
+	cs.USER_ACCOUNT(user_id,username  ,acct ,displayed_name  ,locked  ,followers_count  ,following_count  ,statuses_count  ,note  ,url  ,avatar  ,avatar_static  ,header  ,header_static ,social ,is_moderator  ,is_admin  ,client_id ,client_secret ,refresh_token ,updated_at ,privacy ,sensitiv  ,oauth_token  ,created_at) -> myRelSchema.USER_ACCOUNT(USER_ID,USERNAME  ,ACCT ,DISPLAYED_NAME  ,LOCKED  ,FOLLOWERS_COUNT  ,FOLLOWING_COUNT  ,STATUSES_COUNT  ,NOTE  ,URL  ,AVATAR  ,AVATAR_STATIC  ,HEADER  ,HEADER_STATIC ,SOCIAL ,IS_MODERATOR  ,IS_ADMIN  ,CLIENT_ID ,CLIENT_SECRET ,REFRESH_TOKEN ,UPDATED_AT ,PRIVACY ,SENSITIV  ,OAUTH_TOKEN  ,CREATED_AT),
+	cs.instances_user.user -> myRelSchema.USER_ACCOUNT.instance_by,
+	cs.emoji_user.user -> myRelSchema.USER_ACCOUNT.emoji_used,
 	
-
-
+	cs.STATUSES_STORED(status_serialized  ,status_reply_serialized ,date_creation  ,is_scheduled  ,date_scheduled ,sent  ,date_sent) -> myRelSchema.STATUSES_STORED(STATUS_SERIALIZED  ,STATUS_REPLY_SERIALIZED ,DATE_CREATION  ,IS_SCHEDULED  ,DATE_SCHEDULED ,SENT  ,DATE_SENT),	
+	cs.instances_statusstored.statusstored -> myRelSchema.STATUSES_STORED.instance_by,
+	cs.user_statusstored.statusstored-> myRelSchema.STATUSES_STORED.used_by
+	//user_id  ,instance 
+	
+	
+	}
