@@ -112,7 +112,7 @@ Rodrigue
 ### Scenario 4
  
 #### Supprimer la table STATUSES_CACHE
-La suppression de la table STATUSES_CACHE va entrainer un disfonctionnement au niveau de l'application car celle-ci son ID est utilisé dans la création d'autres tables.
+La suppression de la table STATUSES_CACHE va entrainer un disfonctionnement au niveau de l'application car son ID est utilisé dans la création d'autres tables.
 Pour remédier à ces conséquences il faudra procéder à un refactoring au niveau de certaines tables de la base de données et aussi au niveau du code en supprimant toutes les reférences à cette table.
 
 ### Scenario 5
@@ -129,13 +129,15 @@ Une adaptation sera aussi nécessaire au niveau de la table StatusCacheDAO.java 
 
 ### Scenario 7
  
-#### ajouter xx
-Adrian Emoji table suppression
+#### Renommer la table TIMELINES
+Le renommage de la table TIMELINES n'aura pas de conséquences directes sur le schéma actuel de la base de données car celle-ci ne contient aucune référence explicite.<br/> 
+Cependant il faudra forcément repercuter le changement sans le code principalement dans les tables Sqlite.java et TimelinesDAO.java, ainsi que toutes autres références existantes dans le code.
 
 ### Scenario 8
  
-#### ajouter xx
-Adrian je cherche
+#### Supprimer la colonne USER_ID de la table TIMELINES
+Supprimer la colonne USER_ID de la table TIMELINES est possible sans impact direct sur la base de données. Cependant cela va entrainer un dysfonctionnement dans l'application.<br/> 
+Pour y remédier il faudra procéder à une mise à jour au niveau du code de toutes les références liées à cette colonne (Sqlite.java et TimelinesDAO.java).
 
 ### Scenario 9
  

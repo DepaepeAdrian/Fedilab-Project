@@ -335,7 +335,7 @@ date_creation : text
 		mute[1]: TEMP_MUTE
 	}
 	relationship type user_mute {
-		user[1]: USER_ACCOUNT
+		user[0-N]: USER_ACCOUNT
 		mute[1]: TEMP_MUTE
 	}	
 	relationship type instance_emoji {
@@ -348,7 +348,7 @@ date_creation : text
 	}		
 	
 	relationship type user_statuscache {
-		user[1]: USER_ACCOUNT
+		user[0-N]: USER_ACCOUNT
 		status[1]: STATUSES_CACHE
 	}
 	
@@ -357,7 +357,7 @@ date_creation : text
 		timelines[1]: TIMELINES
 	}	
 	relationship type user_timelines {
-		user[1]: USER_ACCOUNT
+		user[0-N]: USER_ACCOUNT
 		timelines[1]: TIMELINES
 	}
 	relationship type instances_user {
@@ -365,7 +365,7 @@ date_creation : text
 		instance[0-N]: INSTANCES
 	}
 		relationship type emoji_user {
-		emoji[1]: CUSTOM_EMOJI
+		emoji[0-N]: CUSTOM_EMOJI
 		user[1]: USER_ACCOUNT
 	}
 	relationship type instances_user {
@@ -385,12 +385,12 @@ date_creation : text
 	
 	relationship type instances_statusstored {
 		instance[0-N]: INSTANCES
-		statusstored[0-N]:STATUSES_STORED
+		statusstored[1]:STATUSES_STORED
 	}
 	
 	relationship type user_statusstored {
-		user[1]: USER_ACCOUNT
-		statusstored[0-N]:STATUSES_STORED
+		user[0-N]: USER_ACCOUNT
+		statusstored[1]:STATUSES_STORED
 	}
 	
 	
