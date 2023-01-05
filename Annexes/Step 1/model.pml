@@ -87,7 +87,7 @@ date_end : text
 id : text,
 cached_action : int ,
 date_backup : text ,
-status_id : int ,
+status_id : text,
 uri : text ,
 url : text ,
 account : text ,
@@ -215,6 +215,7 @@ list_timeline : text
 	}
 	entity type TIMELINE_CACHE  {
 id : int,
+status_id : text  ,
 cache : text ,
 daate : text
 
@@ -225,7 +226,8 @@ daate : text
 	entity type NOTIFICATION_CACHE {
 id : int,
 notification_id : text ,
-user_id : text ,
+status_id : text,
+status_id_cache : text ,
 account : text ,
 tyype : text ,
 in_reply_to_id : text,
@@ -311,6 +313,13 @@ date_creation : text
 		instance[0-N]: INSTANCES
 	}
 	
+		relationship type instances_favourite{	
+		instance[0-N]: INSTANCES,
+		favourite[1]: PEERTUBE_FAVOURITES
+	}
+	
+	
+	
 	relationship type instances_main_menu_items{
 		instance[0-N]: INSTANCES
 		mainmenu[1]: MAIN_MENU_ITEMS
@@ -323,12 +332,12 @@ date_creation : text
 	
 	
 	relationship type instance_boost {
+		instance[0-N]: INSTANCES
 		boost[0-N]: BOOST_SCHEDULE
-		mainmenu[1]: MAIN_MENU_ITEMS
 	}
 	relationship type user_boost {
 		user[0-N]: USER_ACCOUNT
-		mainmenu[1]: MAIN_MENU_ITEMS
+		boost[0-N]: BOOST_SCHEDULE
 	}
 	
 	relationship type instances_mute {
@@ -392,6 +401,9 @@ date_creation : text
 	relationship type user_statusstored {
 		user[0-N]: USER_ACCOUNT
 		statusstored[1]:STATUSES_STORED
+	}
+	
+
 	}
 	
 physical schemas {
@@ -706,6 +718,7 @@ physical schemas {
 	
 		table  MAIN_MENU_ITEMS {
 			columns {
+				ID,
 				USER_ID  ,
 				INSTANCE  ,
 				NAV_NEWS  ,
@@ -732,6 +745,7 @@ physical schemas {
 	
 		table USER_NOTES {
 			columns {
+				ID,
 				ACCT  ,
 				NOTE ,
 				DATE_CREATION
@@ -773,47 +787,63 @@ mapping rules{
 	cs.instances_usertemp.usertemp -> myRelSchema.USER_ACCOUNT_TEMP.instance_by,
 	//,instance 
 	
-	cs.INSTANCES(instance  ,user_id  ,instance_type  ,tags  ,filtered_with  ,date_creation) -> myRelSchema.INSTANCES(INSTANCE  ,USER_ID  ,INSTANCE_TYPE  ,TAGS  ,FILTERED_WITH  ,DATE_CREATION), 
+	cs.INSTANCES(id,instance  ,instance_type  ,tags  ,filtered_with  ,date_creation) -> myRelSchema.INSTANCES(ID,INSTANCE ,INSTANCE_TYPE  ,TAGS  ,FILTERED_WITH  ,DATE_CREATION), 
+	cs.user_instances.instance -> myRelSchema.INSTANCES.used_by,
+	//,user_id
+	
+	cs.PEERTUBE_FAVOURITES(id ,uuid   ,cache  ,daate ) -> myRelSchema.PEERTUBE_FAVOURITES(ID  ,UUID   ,CACHE  ,DATE) ,
+	cs.instances_favourite.favourite -> myRelSchema.PEERTUBE_FAVOURITES.instance_by,
+	//,INSTANCE 
+	
+	cs.CACHE_TAGS(id ,tags ) -> myRelSchema.CACHE_TAGS(ID ,TAGS),
+	
+	cs.BOOST_SCHEDULE(id ,status_serialized  ,date_scheduled ,is_scheduled  ,sent  ,date_sent) -> myRelSchema.BOOST_SCHEDULE(ID ,STATUS_SERIALIZED  ,DATE_SCHEDULED ,IS_SCHEDULED  ,SENT  ,DATE_SENT),  
+	cs.instance_boost.boost-> myRelSchema.BOOST_SCHEDULE.instance_by,
+	cs.user_boost.boost -> myRelSchema.BOOST_SCHEDULE.used_by,
+	//USER_ID  ,INSTANCE  ,
+	
+	cs.TRACKING_BLOCK(id ,domain) -> myRelSchema.TRACKING_BLOCK(ID ,DOMAIN),
+	
+	cs.TIMELINES(id  ,position   ,tyype  ,remote_instance ,tag_timeline ,displayed  ,list_timeline) -> myRelSchema.TIMELINES(ID  ,POSITION   ,TYPE  ,REMOTE_INSTANCE ,TAG_TIMELINE ,DISPLAYED  ,LIST_TIMELINE), 
+	cs.instances_TIMELINES.timelines -> myRelSchema.TIMELINES.instance_by,
+	cs.user_timelines.timelines -> myRelSchema.TIMELINES.used_by,
+	//instances user_id
+	
+	cs.TIMELINE_CACHE(id  ,cache  ,daate  ) -> myRelSchema.TIMELINE_CACHE(ID     ,CACHE  ,DATE ), 
+	cs.instance_timeline.timeline -> myRelSchema.TIMELINE_CACHE.instance_by,
+	cs.user_timeline.timeline -> myRelSchema.TIMELINE_CACHE.used_by,
+	cs.statuscache_timeline.timeline -> myRelSchema.TIMELINE_CACHE.status_by,
 	
 	
+	//instances user_id
 	
+	cs.NOTIFICATION_CACHE(id ,notification_id  ,account  ,tyype    ,in_reply_to_id  ,created_at) -> myRelSchema.NOTIFICATION_CACHE(ID ,NOTIFICATION_ID  ,ACCOUNT  ,TYPE   ,IN_REPLY_TO_ID  ,CREATED_AT), 
+	cs.instance_notification.notification -> myRelSchema.NOTIFICATION_CACHE.instance_by,
+	cs.user_notification.notification-> myRelSchema.NOTIFICATION_CACHE.used_by,
+	cs.statuscache_notification.notification -> myRelSchema.NOTIFICATION_CACHE.statuscache_by,
+	cs.statusstore_notification.notification-> myRelSchema.NOTIFICATION_CACHE.status_by,
+	
+	//instances user_id ,status_id ,status_id_cache 
+	
+	cs.MAIN_MENU_ITEMS(id ,nav_news  ,nav_list  ,nav_scheduled  ,nav_archive  ,nav_archive_notifications  ,nav_peertube  ,nav_filters  ,nav_how_to_follow  ,nav_administration  ,nav_blocked  ,nav_muted  ,nav_blocked_domains  ,nav_trends  ,nav_howto ) -> myRelSchema.MAIN_MENU_ITEMS( ID ,NAV_NEWS  ,NAV_LIST  ,NAV_SCHEDULED  ,NAV_ARCHIVE  ,NAV_ARCHIVE_NOTIFICATIONS  ,NAV_PEERTUBE  ,NAV_FILTERS  ,NAV_HOW_TO_FOLLOW  ,NAV_ADMINISTRATION  ,NAV_BLOCKED  ,NAV_MUTED  ,NAV_BLOCKED_DOMAINS  ,NAV_TRENDS  ,NAV_HOWTO), 
+	cs.instances_main_menu_items.mainmenu -> myRelSchema.MAIN_MENU_ITEMS.instance_by,
+	cs.user_main_menu_items.mainmenu-> myRelSchema.MAIN_MENU_ITEMS.used_by,
+		//instances user_id
+		
+	cs.USER_NOTES(id ,acct  ,note ,date_creation  ) -> myRelSchema.USER_NOTES(ID ,ACCT  ,NOTE ,DATE_CREATION ) 
+	
+	
+
 	}
-
-
 	
-	cs.orderCreditCard.order -> myRelSchema.Order.paid_with,
-	
-	
-	conceptualSchema.Actor(id,fullName,yearOfBirth,yearOfDeath) -> IMDB_Mongo.actorCollection(id,fullname,birthyear,deathyear),
-	conceptualSchema.movieActor.character-> IMDB_Mongo.actorCollection.movies(),
-	conceptualSchema.Director(id,firstName,lastName, yearOfBirth,yearOfDeath) -> myRelSchema.directorTable(id,firstname,lastname,birth,death),
-	conceptualSchema.movieDirector.director -> myRelSchema.directed.directed_by,
-	conceptualSchema.movieDirector.directed_movie -> myRelSchema.directed.has_directed,
-	conceptualSchema.movieDirector.directed_movie -> myRelSchema.directed.movie_info,
-	conceptualSchema.Movie(id) -> movieRedis.movieKV(id),
-	conceptualSchema.Movie(primaryTitle,originalTitle,isAdult,startYear,runtimeMinutes) ->movieRedis.movieKV(title,originalTitle,isAdult,startYear,runtimeMinutes), 
-	conceptualSchema.Movie(averageRating,numVotes) -> IMDB_Mongo.actorCollection.movies.rating(rate,numberofvotes),
-	conceptualSchema.Movie(id, primaryTitle) -> IMDB_Mongo.actorCollection.movies(id,title)
-}
-
 
 databases {
 	sqlite mydb {
-		host: localhost
+		host: "localhost"
 		port: 3307
 		login: "root"
 		password: "password"
 	}
-	
 
-
-
-
-
-
-///////////////////////////////////////////	
-//////////////////example below this point	
-///////////////////////////////////////////
-	
 
 
