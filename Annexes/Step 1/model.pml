@@ -87,6 +87,7 @@ date_end : text
 id : text,
 cached_action : int ,
 date_backup : text ,
+status_id : int ,
 uri : text ,
 url : text ,
 account : text ,
@@ -271,7 +272,7 @@ date_creation : text
 
 
 
-    relationship type instance_notification{
+     relationship type instance_notification{
 		instance[0-N]: INSTANCES,
 		notification[1]: NOTIFICATION_CACHE
 	}
@@ -392,7 +393,6 @@ date_creation : text
 		user[0-N]: USER_ACCOUNT
 		statusstored[1]:STATUSES_STORED
 	}
-	
 	
 physical schemas {
 	relational schema myRelSchema : mydb {
@@ -541,7 +541,6 @@ physical schemas {
 					}
 			references {
 				 instance_by : INSTANCE -> INSTANCES.ID
-				 status_by : STATUS_ID -> STATUSES_CACHE.ID
 				 used_by : USER_ID -> USER_ACCOUNT.USER_ID
 				}
 				}
@@ -747,10 +746,74 @@ mapping rules{
 	cs.instances_user.user -> myRelSchema.USER_ACCOUNT.instance_by,
 	cs.emoji_user.user -> myRelSchema.USER_ACCOUNT.emoji_used,
 	
-	cs.STATUSES_STORED(status_serialized  ,status_reply_serialized ,date_creation  ,is_scheduled  ,date_scheduled ,sent  ,date_sent) -> myRelSchema.STATUSES_STORED(STATUS_SERIALIZED  ,STATUS_REPLY_SERIALIZED ,DATE_CREATION  ,IS_SCHEDULED  ,DATE_SCHEDULED ,SENT  ,DATE_SENT),	
+	cs.STATUSES_STORED(id,status_serialized  ,status_reply_serialized ,date_creation  ,is_scheduled  ,date_scheduled ,sent  ,date_sent) -> myRelSchema.STATUSES_STORED(ID,STATUS_SERIALIZED  ,STATUS_REPLY_SERIALIZED ,DATE_CREATION  ,IS_SCHEDULED  ,DATE_SCHEDULED ,SENT  ,DATE_SENT),	
 	cs.instances_statusstored.statusstored -> myRelSchema.STATUSES_STORED.instance_by,
-	cs.user_statusstored.statusstored-> myRelSchema.STATUSES_STORED.used_by
+	cs.user_statusstored.statusstored-> myRelSchema.STATUSES_STORED.used_by,
 	//user_id  ,instance 
+	
+	cs.CUSTOM_EMOJI(id ,date_creation  ,shoertcode  ,url  ,url_static) -> myRelSchema.CUSTOM_EMOJI(ID,DATE_CREATION  ,SHOERTCODE  ,URL  ,URL_STATIC ),
+	cs.instance_emoji.emoji -> myRelSchema.CUSTOM_EMOJI.instance_by,
+	//instance
+	
+	cs.SEARCH(id ,keywords ,any_tag  ,all_tag  ,none_tag  ,name  ,is_art  ,is_nsfw  ,date_creation ) -> myRelSchema.SEARCH(ID ,KEYWORDS ,ANY_TAG  ,ALL_TAG  ,NONE_TAG  ,NAME  ,IS_ART  ,IS_NSFW  ,DATE_CREATION),
+	cs.user_search.search -> myRelSchema.SEARCH.used_by,
+	//user_id
+	
+	cs.TEMP_MUTE(id ,acct   ,date_creation  ,date_end  ) -> myRelSchema.TEMP_MUTE(ID ,ACCT  ,DATE_CREATION  ,DATE_END ),
+	cs.instances_mute.mute -> myRelSchema.TEMP_MUTE.instance_by,
+	cs.user_mute.mute -> myRelSchema.TEMP_MUTE.used_by,
+	//,instance  ,targeted_user_id 
+	
+	cs.STATUSES_CACHE(id,cached_action   ,date_backup    ,status_id ,uri  ,url  ,account  ,in_reply_to_id ,in_reply_to_account_id ,reblog ,content  ,created_at  ,emojis ,reblogs_count  ,favourites_count  ,reblogged ,favourited ,muted ,sensitiv , spoiler_text ,visibility  ,media_attachments ,card ,mentions ,poll ,tags ,application ,language ,pinned ) -> myRelSchema.STATUSES_CACHE(ID ,CACHED_ACTION   ,DATE_BACKUP   ,STATUS_ID ,URI  ,URL  ,ACCOUNT  ,IN_REPLY_TO_ID ,IN_REPLY_TO_ACCOUNT_ID ,REBLOG ,CONTENT  ,CREATED_AT  ,EMOJIS ,REBLOGS_COUNT  ,FAVOURITES_COUNT  ,REBLOGGED ,FAVOURITED ,MUTED ,SENSITIV ,SPOILER_ ,VISIBILITY  ,MEDIA_ATTACHMENTS ,CARD ,MENTIONS ,POLL ,TAGS ,APPLICATION ,LANGUAGE ,PINNED),
+	cs.instances_statuscache.status -> myRelSchema.STATUSES_CACHE.instance_by,
+	cs.user_statuscache.status -> myRelSchema.STATUSES_CACHE.used_by,
+	//,instance  ,user_id ,status_id ? weird, don't understand status id here
+	
+	cs.USER_ACCOUNT_TEMP(user_id ,username  ,acct  ,displayed_name  ,locked  ,followers_count  ,following_count  ,statuses_count  ,note  ,url  ,avatar  ,avatar_static  ,header  ,header_static  ,emojis ,social ,is_moderator  ,is_admin  ,client_id ,client_secret ,refresh_token ,updated_at ,privacy ,sensitiv   ,oauth_token  ,created_at) -> myRelSchema.USER_ACCOUNT_TEMP(USER_ID ,USERNAME  ,ACCT  ,DISPLAYED_NAME  ,LOCKED  ,FOLLOWERS_COUNT  ,FOLLOWING_COUNT  ,STATUSES_COUNT  ,NOTE  ,URL  ,AVATAR  ,AVATAR_STATIC  ,HEADER  ,HEADER_STATIC  ,EMOJIS ,SOCIAL ,IS_MODERATOR  ,IS_ADMIN  ,CLIENT_ID ,CLIENT_SECRET ,REFRESH_TOKEN ,UPDATED_AT ,PRIVACY ,SENSITIV  ,OAUTH_TOKEN  ,CREATED_AT), 
+	cs.instances_usertemp.usertemp -> myRelSchema.USER_ACCOUNT_TEMP.instance_by,
+	//,instance 
+	
+	cs.INSTANCES(instance  ,user_id  ,instance_type  ,tags  ,filtered_with  ,date_creation) -> myRelSchema.INSTANCES(INSTANCE  ,USER_ID  ,INSTANCE_TYPE  ,TAGS  ,FILTERED_WITH  ,DATE_CREATION), 
+	
 	
 	
 	}
+
+
+	
+	cs.orderCreditCard.order -> myRelSchema.Order.paid_with,
+	
+	
+	conceptualSchema.Actor(id,fullName,yearOfBirth,yearOfDeath) -> IMDB_Mongo.actorCollection(id,fullname,birthyear,deathyear),
+	conceptualSchema.movieActor.character-> IMDB_Mongo.actorCollection.movies(),
+	conceptualSchema.Director(id,firstName,lastName, yearOfBirth,yearOfDeath) -> myRelSchema.directorTable(id,firstname,lastname,birth,death),
+	conceptualSchema.movieDirector.director -> myRelSchema.directed.directed_by,
+	conceptualSchema.movieDirector.directed_movie -> myRelSchema.directed.has_directed,
+	conceptualSchema.movieDirector.directed_movie -> myRelSchema.directed.movie_info,
+	conceptualSchema.Movie(id) -> movieRedis.movieKV(id),
+	conceptualSchema.Movie(primaryTitle,originalTitle,isAdult,startYear,runtimeMinutes) ->movieRedis.movieKV(title,originalTitle,isAdult,startYear,runtimeMinutes), 
+	conceptualSchema.Movie(averageRating,numVotes) -> IMDB_Mongo.actorCollection.movies.rating(rate,numberofvotes),
+	conceptualSchema.Movie(id, primaryTitle) -> IMDB_Mongo.actorCollection.movies(id,title)
+}
+
+
+databases {
+	sqlite mydb {
+		host: localhost
+		port: 3307
+		login: "root"
+		password: "password"
+	}
+	
+
+
+
+
+
+
+///////////////////////////////////////////	
+//////////////////example below this point	
+///////////////////////////////////////////
+	
+
+
