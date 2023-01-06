@@ -234,6 +234,8 @@ DATE_CREATION TEXT NOT NULL);
 -- *********************************************
 -- * IMPLICIT FKs found                    
 -- *********************************************
+ --status_by : STATUS_ID -> STATUSES_CACHE.ID
+ --used_by : USER_ID -> USER_ACCOUNT.USER_ID
 
 
 alter table NOTIFICATION_CACHE add constraint REF_INSTANCE_FK_NOTIFICATION_CACHE

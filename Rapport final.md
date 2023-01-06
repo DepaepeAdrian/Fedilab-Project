@@ -39,7 +39,13 @@ Modèle entité-relation du schéma enrichi <br/>
 ![alt text](https://github.com/DepaepeAdrian/Fedilab-Project/blob/main/Annexes/Step%201/ER_diagram_enriched.jpg?raw=true)
 
 ### 1.4 Creation du fichier PML
- apres SL enrichi, Adrian fait le PML 
+ Le fichier PML est disponible ici : [model.pm](https://https://github.com/DepaepeAdrian/Fedilab-Project/blob/main/Annexes/Step%201/model.pml).
+ Celui-ci a été créé dans un but théorique. Le code n'a pas pu être testé pour Fedidab car nous avons eu des difficultés a implémenter Hydra.
+ Par contre, la syntaxe a pu être vérifiée à l'aide d'un preojet use case disponible sur le github de Hydra.
+ 
+ La création de ce fichier a été l'étape la plus longue de ce projet, cela est fortement lié à la longueur de ce fichier. Chaque table, chaques relation et chaques clé a du être exprimés dans la syntaxe PML. 
+ 
+ 
 ## Step 2 : Analyse des requêtes
 
 ### Récupération des données
