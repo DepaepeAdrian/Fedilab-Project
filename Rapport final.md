@@ -39,7 +39,7 @@ Modèle entité-relation du schéma enrichi <br/>
 ![alt text](https://github.com/DepaepeAdrian/Fedilab-Project/blob/main/Annexes/Step%201/ER_diagram_enriched.jpg?raw=true)
 
 ### 1.4 Creation du fichier PML
- Le fichier PML est disponible ici : [model.pm](https://https://github.com/DepaepeAdrian/Fedilab-Project/blob/main/Annexes/Step%201/model.pml).
+ Le fichier PML est disponible ici : [model.pm](https://github.com/DepaepeAdrian/Fedilab-Project/blob/main/Annexes/Step%201/model.pml).
 
  Celui-ci a été créé dans un but théorique. Le code n'a pas pu être testé pour Fedilab car nous avons eu des difficultés a implémenter HyDRa.
 
