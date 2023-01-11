@@ -92,7 +92,7 @@ après analyse des requettes nous avons tracé le déroulement de ces operations
 4) renommage de la table USER_ACCOUNT_TEMP en USER_ACCOUNT
 
 
-Rodrigue
+
 
 
 ### Scenario 2
@@ -104,7 +104,7 @@ la supression de la colonne USER_ID de la table USER_ACCOUNT provoquerai une pan
 
 en plus il est noté dans le code SQL comme NOT NULL cequi revèle son importance pour l'application, si elle est supprimé les comptes des utilisateurs ne pourront plus etre identifiés.
 
-Rodrigue
+
 
 ### Scenario 3
  
@@ -113,7 +113,6 @@ Rodrigue
 l'ajout d'une colonne à table USER_ACCOUNT constitue l'ajout d'une information suplementaire dans la base de donnée de l'application; 
 dans le cas ou elle est mappé dans le programe elle servira d'ajout d'une nouvelle fonctionalité.
 
-Rodrigue 
 
 ### Scenario 4
  
@@ -150,14 +149,14 @@ Pour y remédier il faudra procéder à une mise à jour au niveau du code de to
 #### Suppression de la tables INSTANCES
 La suppression d'une table supprimera définitivement la table et toutes ses données de la base de données.
 la table a des contraintes de clés étrangères qui la référencent (12 tables). Ces tables devront être également supprimées avant de pouvoir supprimer la table, ou modifiées pour retirer la dépendance. Cette table semble donc être cruciale pour le fonctionnement de l'application, compte tenu du code SQLite.
-kouakou 
+
 
 ### Scenario 10
  
 #### Modification de la Table CUSTOM_EMOJI
 Les modifications des colonnes sur la table CUSTOM_EMOJI sont possibles, à l'exception de la colonne INSTANCE, qui référence la table INSTANCES. Toute modification de cette colonne qui supprime cette entrée n'a aucun impact sur le fonctionnement de la table et de la base de donnée0. Par contre l'insertion ou la mise à jour d'une valeur de cette collone doit vérifier avant l'existence de cette valeur dans la table INSTANCE.
 
-kouakou 
+
 
 
 
@@ -170,14 +169,14 @@ De plus, les attributs reliés d’une table à l’autre avec une FK ont le mê
 
 
 Les requetes sont gregroupés dans une classe ce qui permets de gérer tous les problèmes de database à un seul endroit. 
-Kouakou
+
 
 ### Points negatifs
 La non-spécification explicite des clés étrangères dans les tables 
 
 le Code n'est pas trop commenté en général 
 
-rodrigue
+
 
 
 Mots réservés du langage SQL et/ou SQLite utilisés comme nom de table ou Attribut. le code n'est pas facilement portable. 
@@ -193,7 +192,7 @@ L'utilisation de "TEXT" comme type des dates dans plusieurs tables. Il serait pe
 
 La gestion des jointure au niveau du code fait que la Database n'est ni exploitable, ni compréhenssible sans l'implementation du code. Ceci cause plusieurs soucis. On pourrait par exemble supprimer les données d'une table sans respecter la contrainte d'intégrité; exemple supprimer une table qui est référencée par une autre table comme clé étangère sans alerte. Aussi on ne saurait pas  déléguer cette partie de l'application à un addministrateur de Base de données ou changer facilement de SGBD.
 
-Kouakou
+
 
 ### Conclusion
 
